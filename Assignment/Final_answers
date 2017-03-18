@@ -1,0 +1,196 @@
+Schema Building
+
+create table Branch (
+	branch_id VARCHAR(50),
+	branch_city VARCHAR(50),
+    PRIMARY KEY (branch_id)
+);
+insert into Branch (branch_id, branch_city) values ('B77', 'Visaginas');
+insert into Branch (branch_id, branch_city) values ('B48', 'Zongluzui');
+insert into Branch (branch_id, branch_city) values ('B94', 'Bayart Huxu');
+insert into Branch (branch_id, branch_city) values ('B19', 'Cochin');
+
+create table Customer (
+	cust_id VARCHAR(50),
+	cust_name VARCHAR(50),
+	customer_city VARCHAR(50),
+	cust_phone VARCHAR(50),
+	branch_id VARCHAR(50),
+    PRIMARY KEY (cust_id),
+    FOREIGN KEY (branch_id) references Branch(branch_id)
+);
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C5', 'Gary Ellis', 'Visaginas', '62-(854)550-6020', 'B77');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C9', 'Theresa Fuller', 'Visaginas', '39-(237)791-7365', 'B77');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C78', 'Stephen Burton', 'Visaginas', '62-(542)495-9051', 'B77');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C58', 'Linda Powell', 'Visaginas', '33-(484)600-0252', 'B77');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C70', 'Nicholas Fox', 'Visaginas', '55-(946)617-3267', 'B77');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C50', 'Keith Williamson', 'Visaginas', '55-(327)534-8730', 'B77');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C76', 'Ruth Lewis', 'Visaginas', '353-(557)346-9159', 'B77');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C1001', 'Jose Russell', 'Zongluzui', '1-(929)791-3183', 'B48');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C86', 'Julie Black', 'Zongluzui', '53-(775)359-0551', 'B48');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C80', 'Lori Peterson', 'Zongluzui', '33-(849)655-9007', 'B48');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C87', 'Douglas Rogers', 'Zongluzui', '86-(616)572-1495', 'B48');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C60', 'Anthony Perkins', 'Zongluzui', '251-(267)541-9832', 'B48');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C39', 'Clarence Wheeler', 'Zongluzui', '375-(809)935-2362', 'B48');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C46', 'Samuel Webb', 'Zongluzui', '98-(307)574-5626', 'B48');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C97', 'Eric Stanley', 'Bayart Huxu', '55-(571)144-3237', 'B94');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C55', 'Jerry Thomas', 'Bayart Huxu', '63-(258)799-6576', 'B94');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C28', 'Jacqueline Banks', 'Bayart Huxu', '86-(444)169-9769', 'B94');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C8', 'Paul Riley', 'Bayart Huxu', '84-(549)962-5545', 'B94');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C62', 'Phyllis Fields', 'Bayart Huxu', '63-(151)368-2467', 'B94');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C781', 'Lawrence George', 'Bayart Huxu', '237-(780)837-5688', 'B94');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C69', 'Andrea Burns', 'Bayart Huxu', '62-(779)237-0320', 'B94');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C4', 'Ann Williams', 'Cochin', '591-(754)545-2911', 'B19');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C96', 'Amanda Crawford', 'Cochin', '62-(669)140-0363', 'B19');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C90', 'Sandra Lawrence', 'Cochin', '66-(945)992-9241', 'B19');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C73', 'Willie Perry', 'Ernakulam', '82-(325)354-8011', 'B19');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C49', 'Michelle Lynch', 'Cochin', '46-(870)264-2826', 'B19');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C601', 'Jane Hawkins', 'Ernakulam', '62-(348)906-4849', 'B19');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C36', 'Brandon Harper', 'Cochin', '62-(997)846-0480', 'B19');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C77', 'Ernest Parker', 'Ernakulam', '33-(250)938-1271', 'B19');
+insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C35', 'Denise Smith', 'Cochin', '81-(719)767-3054', 'B19');
+
+create table Employee (
+	emp_id VARCHAR(50),
+	emp_name VARCHAR(50),
+	emp_phone VARCHAR(50),
+	emp_salary DECIMAL(8,2),
+	branch_id VARCHAR(50),
+    PRIMARY KEY (emp_id),
+    FOREIGN KEY (branch_id) references Branch(branch_id)
+);
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E75', 'Jack Ramos', '998-(309)261-0596', 88354.65, 'B77');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E22', 'Eugene Alvarez', '86-(652)454-8846', 309461.12, 'B77');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E78', 'Scott Marshall', '964-(789)540-2120', 443816.21, 'B77');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E13', 'Steven Hanson', '52-(831)856-2972', 82625.95, 'B77');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E82', 'Kenneth Hart', '30-(850)284-8504', 247096.71, 'B77');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E32', 'Paula Riley', '33-(383)762-7145', 433685.53, 'B77');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E81', 'Jacqueline Sullivan', '62-(287)990-5525', 293201.15, 'B77');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E92', 'Howard Lewis', '55-(986)271-6031', 149374.06, 'B77');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E5', 'Gregory Cruz', '62-(135)239-9781', 163140.68, 'B77');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E41', 'Marie Collins', '1-(306)507-6247', 415838.73, 'B77');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E30', 'Sandra Kennedy', '977-(763)877-0691', 434939.03, 'B48');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E97', 'Carolyn Dixon', '86-(823)994-2737', 434897.41, 'B48');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E132', 'Antonio Hunt', '86-(720)696-3086', 361834.06, 'B48');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E11', 'Heather Banks', '86-(617)139-5943', 457356.29, 'B48');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E90', 'Jason Hill', '86-(818)772-9887', 41926.84, 'B48');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E100', 'Ashley Bryant', '86-(485)633-2560', 410726.99, 'B48');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E8', 'Phillip Burns', '62-(154)696-3245', 341933.0, 'B48');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E59', 'Janet Riley', '62-(237)102-2731', 102058.55, 'B48');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E6', 'Ralph Franklin', '385-(404)473-6180', 287755.01, 'B48');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E43', 'Lori West', '86-(973)560-0113', 33640.31, 'B48');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E95', 'Joyce Lynch', '389-(848)480-6039', 134864.64, 'B94');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E91', 'Douglas Stephens', '63-(698)162-6409', 44423.65, 'B94');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E88', 'Jimmy Walker', '48-(368)529-8825', 365944.92, 'B94');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E53', 'Michelle Butler', '33-(430)263-8076', 478616.54, 'B94');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E79', 'Frances Evans', '963-(443)559-9622', 301598.27, 'B94');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E67', 'Christina Ferguson', '389-(102)586-0096', 441423.08, 'B94');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E58', 'Ralph Griffin', '52-(937)691-6875', 351387.73, 'B94');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E12', 'Russell Medina', '86-(954)906-6743', 200865.34, 'B94');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E39', 'Karen Garza', '7-(403)125-7249', 363569.05, 'B94');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E3', 'Louis Gardner', '1-(208)832-3891', 234357.75, 'B94');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E40', 'Charles Reid', '30-(968)277-8775', 215319.11, 'B19');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E17', 'Brandon Simmons', '351-(441)730-4504', 395290.44, 'B19');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E791', 'Paul Ford', '963-(476)657-7681', 169658.64, 'B19');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E952', 'Juan Hart', '86-(495)823-9694', 374521.5, 'B19');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E66', 'Fred Rogers', '86-(821)589-1276', 328605.23, 'B19');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E7', 'Lois Myers', '62-(245)601-3784', 48951.02, 'B19');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E71', 'Howard Rose', '55-(466)346-1174', 323047.25, 'B19');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E72', 'Willie Stewart', '33-(526)530-3640', 286188.48, 'B19');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E16', 'Clarence Fernandez', '47-(485)768-2551', 498239.95, 'B19');
+insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E48', 'Willie Sims', '86-(148)584-1974', 337823.41, 'B19');
+
+create table Service (
+	cust_id VARCHAR(50),
+	emp_id VARCHAR(50),
+    FOREIGN KEY (cust_id) references Customer(cust_id),
+    FOREIGN KEY (emp_id) references Employee(emp_id)
+);
+
+insert into Service (cust_id, emp_id) values ('C1001', 'E30');
+insert into Service (cust_id, emp_id) values ('C1001', 'E11');
+insert into Service (cust_id, emp_id) values ('C1001', 'E8');
+insert into Service (cust_id, emp_id) values ('C1001', 'E59');
+insert into Service (cust_id, emp_id) values ('C1001', 'E43');
+insert into Service (cust_id, emp_id) values ('C36', 'E40');
+insert into Service (cust_id, emp_id) values ('C73', 'E16');
+insert into Service (cust_id, emp_id) values ('C96', 'E40');
+insert into Service (cust_id, emp_id) values ('C36', 'E71');
+insert into Service (cust_id, emp_id) values ('C96', 'E791');
+insert into Service (cust_id, emp_id) values ('C601', 'E40');
+insert into Service (cust_id, emp_id) values ('C36', 'E7');
+insert into Service (cust_id, emp_id) values ('C49', 'E72');
+insert into Service (cust_id, emp_id) values ('C77', 'E952');
+insert into Service (cust_id, emp_id) values ('C4', 'E791');
+insert into Service (cust_id, emp_id) values ('C77', 'E66');
+
+
+Question commands
+
+Q1. a)
+
+select * from Employee where emp_id in (select emp_id from Service where cust_id='C1001');
+Output Before Increment:
++--------+----------------+-------------------+------------+-----------+
+| emp_id | emp_name       | emp_phone         | emp_salary | branch_id |
++--------+----------------+-------------------+------------+-----------+
+| E11    | Heather Banks  | 86-(617)139-5943  |  457356.29 | B48       |
+| E30    | Sandra Kennedy | 977-(763)877-0691 |  434939.03 | B48       |
+| E43    | Lori West      | 86-(973)560-0113  |   33640.31 | B48       |
+| E59    | Janet Riley    | 62-(237)102-2731  |  102058.55 | B48       |
+| E8     | Phillip Burns  | 62-(154)696-3245  |  341933.00 | B48       |
++--------+----------------+-------------------+------------+-----------+
+
+update Employee set emp_salary=emp_salary+(emp_salary*0.1) where emp_id in (select emp_id from Service where cust_id='C1001');
+
+select * from Employee where emp_id in (select emp_id from Service where cust_id='C1001');
+Output:
++--------+----------------+-------------------+------------+-----------+
+| emp_id | emp_name       | emp_phone         | emp_salary | branch_id |
++--------+----------------+-------------------+------------+-----------+
+| E11    | Heather Banks  | 86-(617)139-5943  |  503091.92 | B48       |
+| E30    | Sandra Kennedy | 977-(763)877-0691 |  478432.93 | B48       |
+| E43    | Lori West      | 86-(973)560-0113  |   37004.34 | B48       |
+| E59    | Janet Riley    | 62-(237)102-2731  |  112264.41 | B48       |
+| E8     | Phillip Burns  | 62-(154)696-3245  |  376126.30 | B48       |
++--------+----------------+-------------------+------------+-----------+
+================================================================================
+
+b)
+select emp_name, emp_phone from Employee where branch_id=(select branch_id from Branch where branch_city='Cochin');
++--------------------+-------------------+
+| emp_name           | emp_phone         |
++--------------------+-------------------+
+| Clarence Fernandez | 47-(485)768-2551  |
+| Brandon Simmons    | 351-(441)730-4504 |
+| Charles Reid       | 30-(968)277-8775  |
+| Willie Sims        | 86-(148)584-1974  |
+| Fred Rogers        | 86-(821)589-1276  |
+| Lois Myers         | 62-(245)601-3784  |
+| Howard Rose        | 55-(466)346-1174  |
+| Willie Stewart     | 33-(526)530-3640  |
+| Paul Ford          | 963-(476)657-7681 |
+| Juan Hart          | 86-(495)823-9694  |
++--------------------+-------------------+
+================================================================================
+c)
+select cust_name as Name, cust_phone as Contact from (select * from (select * from Customer left join Branch using(branch_id)) as t1 where branch_city=customer_city order by customer_city) 
+as t2 where customer_city='Cochin';
+Output:
++-----------------+-------------------+
+| Name            | Contact           |
++-----------------+-------------------+
+| Ann Williams    | 591-(754)545-2911 |
+| Denise Smith    | 81-(719)767-3054  |
+| Michelle Lynch  | 46-(870)264-2826  |
+| Sandra Lawrence | 66-(945)992-9241  |
+| Brandon Harper  | 62-(997)846-0480  |
+| Amanda Crawford | 62-(669)140-0363  |
++-----------------+-------------------+
+Q2.
+Inner Join:
+select Customer.branch_id,cust_id,cust_name,emp_id,emp_name from Customer inner join Employee on Customer.branch_id=Employee.branch_id order by branch_id;
+Outer Join:
+select * from Customer left join Employee on Customer.branch_id=Employee.branch_id;
+select * from Customer right join Employee on Customer.branch_id=Employee.branch_id;
+Q3. 
