@@ -1,0 +1,3390 @@
+Script started on Wed Mar 15 18:48:37 2017
+bash: /Users/arjuns/.bashrc: Too many levels of symbolic links
+[?1034hbash-3.2$ ls[K[Kexitssh arjun@192.168.64.3
+arjun@192.168.64.3's password: 
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-32-generic i686)
+
+ * Documentation:  https://help.ubuntu.com/
+
+Last login: Sat Mar  4 20:04:04 2017 from 192.168.64.1
+]0;arjun@arjun-Veertu: ~arjun@arjun-Veertu:~$ myswl[K[Kql
+ERROR 1045 (28000): Access denied for user 'arjun'@'localhost' (using password: NO)
+]0;arjun@arjun-Veertu: ~arjun@arjun-Veertu:~$ mysql -u root -p panasonic[K[K[K[K[K[K[K[K[Kroot
+Enter password: 
+ERROR 1049 (42000): Unknown database 'root'
+]0;arjun@arjun-Veertu: ~arjun@arjun-Veertu:~$ mysql -u root -p root[K[K[K[K
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+]0;arjun@arjun-Veertu: ~arjun@arjun-Veertu:~$ mysql -u root -p test
+Enter password: 
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 47
+Server version: 5.5.54-0ubuntu0.14.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> s use test
+Database changed
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_test |
++----------------+
+| Employee       |
+| branch         |
++----------------+
+2 rows in set (0.00 sec)
+
+mysql> sh  describe branch;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| branch_name | char(15) | YES  |     | NULL    |       |
+| branch_city | char(30) | YES  |     | NULL    |       |
+| assets      | int(11)  | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> describe Employee;
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| emp_id     | int(11)  | YES  |     | NULL    |       |
+| emp_name   | char(50) | YES  |     | NULL    |       |
+| emp_phone  | int(11)  | YES  |     | NULL    |       |
+| emp_salary | float    | YES  |     | NULL    |       |
+| branch_id  | int(11)  | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> create table Customer(0  { 
+    -> { { (
+    -> cust_id int,
+    -> cust_name var   char()5)0)). ,
+    -> customer_city()5)0)),
+    -> cust_phone int,
+    -> branch_id varchar(25)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(50),
+cust_phone int,
+branch_id varchar(25)
+)' at line 5
+mysql> create table Customer ( cust_id int, cust_name char(50), customer_city(50), cust_phoone int, branch_id varchar(25) );[Amysql> );[K
+[K[Amysql> );branch_id varchar(25)mysql> [6Pcust_phone int,[3@omer_city(50),mysql> cust[1@_name char(50),mysql> cust_[7Pid int,mysql> ([Kcreate table Customer(
+    -> create table Customer( ( cust_id int, cust_name char(50), customer_city(50), cust_phoone int, branch_id varchar(25) );[A    -> );[K
+[K[A    -> );branch_id varchar(25)    -> [6Pcust_phone int,[3@omer_city(50),    -> cust[1@_name char(50),    -> cust_[7Pid int,
+    -> cust_id int,    -> create table Customer( ( cust_id int, cust_name char(50), customer_city(50), cust_phoone int, branch_id varchar(25) );[A    -> );[K
+[K[A    -> );branch_id varchar(25)    -> [6Pcust_phone int,[3@omer_city(50),    -> cust[1@_name char(50),
+    -> cust_name char(50),    -> cust_[7Pid int,    -> create table Customer( ( cust_id int, cust_name char(50), customer_city(50), cust_phoone int, branch_id varchar(25) );[A    -> );[K
+[K[A    -> );branch_id varchar(25)    -> [6Pcust_phone int,    -> branch_id varchar(25)    -> [6Pcust_phone int,[3@omer_city(50),[1@ [1@c[1@h[1@a[1@r(50),
+    -> customer_city char(50),    -> cust[4P_name char(50),    -> cust_[7Pid int,    -> create table Customer( ( cust_id int, cust_name char(50), customer_city(50), cust_phoone int, branch_id varchar(25) );[A    -> );[K
+[K[A    -> );branch_id varchar(25)    -> [6Pcust_phone int,
+    -> cust_phone int,[8@omer_city char(50),    -> cust[4P_name char(50),    -> cust_[7Pid int,    -> create table Customer( ( cust_id int, cust_name char(50), customer_city(50), cust_phoone int, branch_id varchar(25) );[A    -> );[K
+[K[A    -> );branch_id varchar(25)
+    -> );
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> create table Service() cust_id int,emp_id int);
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> sho  how tables;
++----------------+
+| Tables_in_test |
++----------------+
+| Customer       |
+| Employee       |
+| Service        |
+| branch         |
++----------------+
+4 rows in set (0.01 sec)
+
+mysql> ren   select * from Customer;
+Empty set (0.00 sec)
+
+mysql> select * from Emplo y oyee;
+Empty set (0.00 sec)
+
+mysql> select * from branch;
++-------------+---------------+--------+
+| branch_name | branch_city   | assets |
++-------------+---------------+--------+
+| KZK Jn      | Kazhakkoottam | 100000 |
+| KZK Jn      | Kazhakkoottam | 100000 |
++-------------+---------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> drop table branch;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> delete t branch;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> show tables;
++----------------+
+| Tables_in_test |
++----------------+
+| Customer       |
+| Employee       |
+| Service        |
++----------------+
+3 rows in set (0.00 sec)
+
+mysql> crat  eat  e table Ser   Branch(branch_id int, branch_city char(50); );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables  ;
++----------------+
+| Tables_in_test |
++----------------+
+| Branch         |
+| Customer       |
+| Employee       |
+| Service        |
++----------------+
+4 rows in set (0.00 sec)
+
+mysql> se  insert into Employee(10 01,""A"r"j"u"n" "S""S",S[1P[1P",9207588529,9 100000,000[1P,[1P[1@8[1@6[1P[1@50000,)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '101,"Arjun",9207588529,850000,)' at line 1
+mysql> insert into Bra               l show tables
+    -> ;
++----------------+
+| Tables_in_test |
++----------------+
+| Branch         |
+| Customer       |
+| Employee       |
+| Service        |
++----------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into Brna  anch(109410  01  1,KZK);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10941,KZK)' at line 1
+mysql> insert into Branch(10941,KZK);[1@'KZK[1@'
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10941,'KZK')' at line 1
+mysql> insert into Branch(10941,'KZK');([1@'10941[1@'
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''10941','KZK')' at line 1
+mysql> insert into Branch('10941','KZK');[1P[1@"[1P[1@"'[1P[1@"[1P[1@"
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"10941","KZK")' at line 1
+mysql> insert into Branch("10941","KZK");[1P[1P
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10941,"KZK")' at line 1
+mysql> insert into Branch(branch_id ,bre anch_city)
+    -> vale ues()s)[1P)1)0)9)4),)k)[1P)[1P)[1P)[1P)[1P)[1P)')1)0)9)4)0)'),));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+mysql> insert into Branch (branch_id, branch_city) values (1, 'Yoshida-kasugach');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (2, 'Guanaja');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (3, 'ItanhaC)m');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (4, 'Krajan Pakel');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (5, 'IperC3');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (6, 'Zhemtala');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (7, 'Ibotirama');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (8, 'ChokwC)');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (9, 'SertC"nia');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (10, 'Verd');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (11, 'Namioka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (12, 'Steinkjer');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (13, 'Dourbali');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (14, 'Poctol');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (15, 'Alubijid');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (16, 'Saldanha');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (17, 'Pekan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (18, 'Heshui');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (19, 'Kambing');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (20, 'Baozhu');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (21, 'Dakhla');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (22, 'Morales');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (23, 'Manggis');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (24, 'Bochum');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (25, 'Chittagong');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (26, 'Bolotnoye');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (27, 'Saint-Denis');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (28, 'Gambang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (29, 'Alegrete');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (30, 'El Corpus');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (31, 'Luoshan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (32, 'Zhouxi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (33, 'Wuppertal');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (34, 'Nacka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (35, 'El Cocuy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (36, 'Jinrongjie');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (37, 'Bezhta');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (38, 'Cachipay');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (39, 'Susanino');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (40, 'Bajiao');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (41, 'Richmond');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (42, 'Xincheng Chengguanzhen');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (43, 'Nyachera');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (44, 'Liren');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (45, 'Campos Novos');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (46, 'AmpelC3kipoi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (47, 'Brampton');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (48, 'Toshbuloq');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (49, 'Zheleznogorsk');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (50, 'Maseru');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (51, 'Helsingborg');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (52, 'San Juan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (53, 'Chengtian');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (54, 'Thua:-n Nam');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (55, 'Hairag');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (56, 'TC-lisos');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (57, 'Smolyaninovo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (58, 'Damaying');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (59, 'Villa Nueva');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (60, 'Saint Hubert');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (61, 'Marianowo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (62, 'Barurao');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (63, 'Vyselki');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (64, 'Beijie');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (65, 'Ash Shuqayrah');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (66, 'Phu Phiang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (67, 'Paseyan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (68, 'Santa AdC)lia');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (69, 'Trzcinica');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (70, 'Torre de Moncorvo');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (71, 'Manizales');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (72, 'Jazovo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (73, 'Arras');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (74, 'Longos');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (75, 'Katyr-Yurt');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (76, 'Gunjur Kuta');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (77, 'Chaoyang');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (78, 'Kamionka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (79, 'Capilla del Monte');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (80, 'SC6dertC$lje');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (81, 'Ambohitrolomahitsy');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (82, 'Campos');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (83, 'Rocky Mountain House');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (84, 'Bloemfontein');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (85, 'Tchaourou');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (86, 'Nandu');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (87, 'Shifo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (88, 'Austin');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (89, 'Cikujang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (90, 'Laholm');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (91, 'Pangkajene');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (92, 'Dayuan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (93, 'Karlskoga');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (94, 'CelendC-n');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (95, 'Daming');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (96, 'Guanghou');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (97, 'Baoyang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (98, 'Yelizovo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (99, 'Asheville');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (100, 'Neob');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (101, 'Borovskoy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (102, 'Memphis');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (103, 'Gudauta');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (104, 'Ningyuan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (105, 'Avdzaga');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (106, 'Sharga');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (107, 'Bobowo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (108, 'Pereira');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (109, 'Poniatowa');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (110, 'E^AaszczC3w');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (111, 'C^]psonas');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (112, 'Beiban');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (113, 'Jiaxing');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (114, 'Pojan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (115, 'Changting');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (116, 'Farmington');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (117, 'MjC6lby');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (118, 'Nikolayevskaya');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (119, 'Chenda');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (120, 'Solosolo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (121, 'KhD^AngD^Ah DogrD^An');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (122, 'Sudislavlb');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (123, 'BodC8');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (124, 'Patong');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (125, 'Huangnaihai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (126, 'Brest');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (127, 'Dayangqi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (128, 'Davila');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (129, 'Kebili');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (130, 'Canomoy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (131, 'Tangjia');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (132, 'Zhenxing');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (133, 'Jinping');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (134, 'Nizhnepavlovka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (135, 'Tinabogan');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (136, 'Xiaomei');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (137, 'GirC3n');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (138, 'Klobuky');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (139, 'Banyubang');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (140, 'Hongor');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (141, 'Shanghu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (142, 'Kama');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (143, 'Yaogu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (144, 'Truskolasy');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (145, 'Jajaway');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (146, 'Taiyang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (147, 'Agusan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (148, 'Cirompang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (149, 'Fukadale');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (150, 'San CristC3bal');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (151, 'Santa Cruz del Norte');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (152, 'Elbasan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (153, 'Stockholm');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (154, 'Recreio');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (155, 'Shuangjie');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (156, 'Qorashina');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (157, 'Lukashin');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (158, 'Venustiano Carranza');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (159, 'Independencia');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (160, 'BeE!ka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (161, 'BeneE!ov nad PlouD
+    '> nicC-');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (162, 'LeEE Podlaska');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (163, 'Krong Pi Nang');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (164, 'Pingqiao');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (165, 'Vilbnyansbk');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (166, 'SC#o Domingos do MaranhC# o');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (167, 'Wufeng');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (168, 'Cineumbeuy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (169, 'Kosamphi Nakhon');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (170, 'Reriz');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (171, 'Huddinge');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (172, 'Odivelas');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (173, 'Villa Ojo de Agua');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (174, 'Lyon');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (175, 'AE# E"D+rah');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (176, 'MarD
+    '> elji');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (177, 'Belo Oriente');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (178, 'Ibaraki');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (179, 'LeC3n');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (180, 'ThakhC(k');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (181, 'Ba:/c Ka:!n');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (182, 'Buseresere');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (183, 'Songzhuang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (184, 'Nanhe');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (185, 'Nyagla');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (186, 'Laranjal Paulista');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (187, 'Cortezia');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (188, 'Voiron');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (189, 'Likhobory');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (190, 'Xibali');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (191, 'Talisay');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (192, 'Nor Yerznka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (193, 'Dalan');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (194, 'Jiucaigou');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (195, 'BubullimC+');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (196, 'Sofo-Birnin-Gwari');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (197, 'Ndago');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (198, 'Stung Treng');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (199, 'Buluh Kasap');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (200, 'Sofrino');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (201, 'Huamachuco');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (202, 'Mercedes');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (203, 'C^Abrego');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (204, 'Huangxi');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (205, 'Anda');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (206, 'Virden');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (207, 'Venilale');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (208, 'Gesikan');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (209, 'Lungaog');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (210, 'Pore');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (211, 'Chayek');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (212, 'Kamenka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (213, 'Planeta Rica');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (214, 'Dandian');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (215, 'Wailebe');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (216, 'Wirral');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (217, 'Geshan');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (218, 'Guihing Proper');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (219, 'Esperantina');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (220, 'NC$ssjC6');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (221, 'Jiuguan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (222, 'Liangzeng');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (223, 'Adani');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (224, 'Nakhon Nayok');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (225, 'Cruz de los Milagros');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (226, 'Santa Valha');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (227, 'Da:'u Tia:?ng');
+    '> insert into Branch (branch_id, branch_city) values (228, 'Chugur');
+    '> insert into Branch (branch_id, branch_city) values (229, 'Nanjie');
+    '> insert into Branch (branch_id, branch_city) values (230, 'Bizana');
+    '> insert into Branch (branch_id, branch_city) values (231, 'Church End');
+    '> insert into Branch (branch_id, branch_city) values (232, 'Santana do ParaC-so');
+    '> insert into Branch (branch_id, branch_city) values (233, 'Cincinnati');
+    '> insert into Branch (branch_id, branch_city) values (234, 'Charlotte');
+    '> insert into Branch (branch_id, branch_city) values (235, 'Trieste');
+    '> insert into Branch (branch_id, branch_city) values (236, 'LoukC-sia');
+    '> insert into Branch (branch_id, branch_city) values (237, 'Bellavista');
+    '> insert into Branch (branch_id, branch_city) values (238, 'Guanzhuang');
+    '> insert into Branch (branch_id, branch_city) values (239, 'Crossmolina');
+    '> insert into Branch (branch_id, branch_city) values (240, 'Vuhlehirsbk');
+    '> insert into Branch (branch_id, branch_city) values (241, 'Jingzhuang');
+    '> insert into Branch (branch_id, branch_city) values (242, 'CajolC!');
+    '> insert into Branch (branch_id, branch_city) values (243, 'Shahumyan');
+    '> insert into Branch (branch_id, branch_city) values (244, 'Nantes');
+    '> insert into Branch (branch_id, branch_city) values (245, 'Hat Yai');
+    '> insert into Branch (branch_id, branch_city) values (246, 'Selbtso');
+    '> insert into Branch (branch_id, branch_city) values (247, 'Chastyye');
+    '> insert into Branch (branch_id, branch_city) values (248, 'Hetai');
+    '> insert into Branch (branch_id, branch_city) values (249, 'DedenC+vo');
+    '> insert into Branch (branch_id, branch_city) values (250, 'Colombia');
+    '> insert into Branch (branch_id, branch_city) values (251, 'Aqtoghay');
+    '> insert into Branch (branch_id, branch_city) values (252, 'Dzyarzhynsk');
+    '> insert into Branch (branch_id, branch_city) values (253, 'Gongli');
+    '> insert into Branch (branch_id, branch_city) values (254, 'Pilcaniyeu');
+    '> insert into Branch (branch_id, branch_city) values (255, 'Hemudu');
+    '> insert into Branch (branch_id, branch_city) values (256, 'Kedungreja');
+    '> insert into Branch (branch_id, branch_city) values (257, 'Tawau');
+    '> insert into Branch (branch_id, branch_city) values (258, 'Jinji');
+    '> insert into Branch (branch_id, branch_city) values (259, 'Kezilei');
+    '> insert into Branch (branch_id, branch_city) values (260, 'NC.mes');
+    '> insert into Branch (branch_id, branch_city) values (261, 'Dibulla');
+    '> insert into Branch (branch_id, branch_city) values (262, 'Dallas');
+    '> insert into Branch (branch_id, branch_city) values (263, 'Damu');
+    '> insert into Branch (branch_id, branch_city) values (264, 'Tena');
+    '> insert into Branch (branch_id, branch_city) values (265, 'Onoda');
+    '> insert into Branch (branch_id, branch_city) values (266, 'Muromtsevo');
+    '> insert into Branch (branch_id, branch_city) values (267, 'Hemudu');
+    '> insert into Branch (branch_id, branch_city) values (268, 'Qinghaihu');
+    '> insert into Branch (branch_id, branch_city) values (269, 'Patambuco');
+    '> insert into Branch (branch_id, branch_city) values (270, 'Boljoon');
+    '> insert into Branch (branch_id, branch_city) values (271, 'Weicheng');
+    '> insert into Branch (branch_id, branch_city) values (272, 'Grand-Bassam');
+    '> insert into Branch (branch_id, branch_city) values (273, 'LuleC%');
+    '> insert into Branch (branch_id, branch_city) values (274, 'Zhangqiang');
+    '> insert into Branch (branch_id, branch_city) values (275, 'Pengulu');
+    '> insert into Branch (branch_id, branch_city) values (276, 'Carrigtwohill');
+    '> insert into Branch (branch_id, branch_city) values (277, 'Sigay');
+    '> insert into Branch (branch_id, branch_city) values (278, 'Fangxi');
+    '> insert into Branch (branch_id, branch_city) values (279, 'Bayan Ewenke Minzu');
+    '> insert into Branch (branch_id, branch_city) values (280, 'Buyuan');
+    '> insert into Branch (branch_id, branch_city) values (281, 'Al MuE#ayrifD+');
+    -> insert into Branch (branch_id, branch_city) values (282, 'Tournon-sur-RhC4ne');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'u Tia:?ng');
+insert into Branch (branch_id, branch_city) values (228, 'Chugur');' at line 1
+mysql> insert into Branch (branch_id, branch_city) values (283, 'MaE[KtaD[Ka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (284, 'Janowice');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (285, 'Guangli');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (286, 'Badajoz');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (287, 'Oslo');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (288, 'Bordeaux');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (289, 'Zhitan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (290, 'Kanbe');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (291, 'E^ADknica');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (292, 'Erada');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (293, 'Veinticinco de Mayo');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (294, 'Nefta');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (295, 'Santiago AtitlC!n');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (296, 'Stepojevac');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (297, 'Yangshufang');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (298, 'Bua Yai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (299, 'Morelos');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (300, 'Tawangrejo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (301, 'Nikolbskoye');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (302, 'Zhendong');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (303, 'Lindi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (304, 'Bayan Tuohai');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (305, 'Zitong');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (306, 'Matsushima');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (307, 'Hekou');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (308, 'MC!laga');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (309, 'Lamongan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (310, 'Kaskinen');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (311, 'Toutuo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (312, 'Fujikawaguchiko');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (313, 'Luobei');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (314, 'Mosta');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (315, 'Karagandy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (316, 'Kharlu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (317, 'Chengfeng');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (318, 'Garland');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (319, 'AlquC-zar');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (320, 'SC#o JoC#o das Lampas');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (321, 'Borjomi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (322, 'ShC+nmC+ri');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (323, 'Venilale');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (324, 'Lebu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (325, 'Hongqi');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (326, 'Huaibei');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (327, 'AfC!ntou');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (328, 'Torres Novas');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (329, 'Zhitang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (330, 'Rennes');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (331, 'Auxerre');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (332, 'b^XAmrD^An');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (333, 'Santa Ana Huista');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (334, 'Beiling');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (335, 'Muhoroni');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (336, 'P[15@(reverse-i-search)`': insert into Branch (branch_id, branch_city) values (336, 'P[15Pmysql> insert into Branch (branch_id, branch_city) values (336, 'PP>P;P>Q^GP0P5P2Q^AP:P>P5 ');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (337, 'LitvC-nov');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (338, 'Cran-Gevrier');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (339, 'Sande SC#o LourenC'o');
+    '> insert into Branch (branch_id, branch_city) values (340, 'Ngluweng Dua');
+    '> insert into Branch (branch_id, branch_city) values (341, 'Poretskoye');
+    '> insert into Branch (branch_id, branch_city) values (342, 'TrollhC$ttan');
+    '> insert into Branch (branch_id, branch_city) values (343, 'Tambir');
+    '> insert into Branch (branch_id, branch_city) values (344, 'E^AD^Ecko');
+    '> insert into Branch (branch_id, branch_city) values (345, 'E;C3E^Bkiewka');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'o');
+insert into Branch (branch_id, branch_city) values (340, 'Ngluweng Dua');
+i' at line 1
+    '> insert into Branch (branch_id, branch_city) values (346, 'Yazykovo');
+    '> insert into Branch (branch_id, branch_city) values (347, 'Xinzhou');
+    '> insert into Branch (branch_id, branch_city) values (348, 'Babasakhib');
+    '> insert into Branch (branch_id, branch_city) values (349, 'Jackson');
+    '> insert into Branch (branch_id, branch_city) values (350, 'Fengshan');
+    '> insert into Branch (branch_id, branch_city) values (351, 'Turmusb^XayyD^A');
+    '> insert into Branch (branch_id, branch_city) values (352, 'Chiscas');
+    '> insert into Branch (branch_id, branch_city) values (353, 'Mairana');
+    '> insert into Branch (branch_id, branch_city) values (354, 'Toulon');
+    '> insert into Branch (branch_id, branch_city) values (355, 'Tygda');
+    '> insert into Branch (branch_id, branch_city) values (356, 'Trasak');
+    '> insert into Branch (branch_id, branch_city) values (357, 'Bauang');
+    '> insert into Branch (branch_id, branch_city) values (358, 'Dobra');
+    '> insert into Branch (branch_id, branch_city) values (359, 'Daxi');
+    '> insert into Branch (branch_id, branch_city) values (360, 'Jacarezinho');
+    '> insert into Branch (branch_id, branch_city) values (361, 'Tanshi');
+    '> insert into Branch (branch_id, branch_city) values (362, 'Vyritsa');
+    '> insert into Branch (branch_id, branch_city) values (363, 'General Pinedo');
+    '> insert into Branch (branch_id, branch_city) values (364, 'Nacala');
+    '> insert into Branch (branch_id, branch_city) values (365, 'Krasnogorodskoye');
+    '> insert into Branch (branch_id, branch_city) values (366, 'Curiapo');
+    '> insert into Branch (branch_id, branch_city) values (367, 'Daban');
+    '> insert into Branch (branch_id, branch_city) values (368, 'AraucC!ria');
+    '> insert into Branch (branch_id, branch_city) values (369, 'Huayan');
+    '> insert into Branch (branch_id, branch_city) values (370, 'Pajarillo');
+    '> insert into Branch (branch_id, branch_city) values (371, 'Milicz');
+    '> insert into Branch (branch_id, branch_city) values (372, 'E=irovnica');
+    '> insert into Branch (branch_id, branch_city) values (373, 'Xintun');
+    '> insert into Branch (branch_id, branch_city) values (374, 'Ronfe');
+    '> insert into Branch (branch_id, branch_city) values (375, 'Matamey');
+    '> insert into Branch (branch_id, branch_city) values (376, 'Zhabagly');
+    '> insert into Branch (branch_id, branch_city) values (377, 'Tornio');
+    '> insert into Branch (branch_id, branch_city) values (378, 'Chicago');
+    '> insert into Branch (branch_id, branch_city) values (379, 'Ouro Branco');
+    '> insert into Branch (branch_id, branch_city) values (380, 'E;ywiec');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'C3Ekiewka');
+insert into Branch (branch_id, branch_city) values (346, 'Yazykovo' at line 1
+    '> insert into Branch (branch_id, branch_city) values (381, 'Xinshi');
+    '> insert into Branch (branch_id, branch_city) values (382, 'Dobrovo');
+    '> insert into Branch (branch_id, branch_city) values (383, 'Dongsheng');
+    '> insert into Branch (branch_id, branch_city) values (384, 'Rio Grande');
+    '> insert into Branch (branch_id, branch_city) values (385, 'Rodnikovskaya');
+    '> insert into Branch (branch_id, branch_city) values (386, 'StD>ery');
+    '> insert into Branch (branch_id, branch_city) values (387, 'Riangkroko');
+    '> insert into Branch (branch_id, branch_city) values (388, 'Tomilino');
+    '> insert into Branch (branch_id, branch_city) values (389, 'MinE+f');
+    '> insert into Branch (branch_id, branch_city) values (390, 'TC"n An');
+    "> insert into Branch (branch_id, branch_city) values (391, 'Gorzyce');
+    "> insert into Branch (branch_id, branch_city) values (392, 'Uppsala');
+    "> insert into Branch (branch_id, branch_city) values (393, 'Sousse');
+    "> insert into Branch (branch_id, branch_city) values (394, 'Trstenik');
+    "> insert into Branch (branch_id, branch_city) values (395, 'Nanganumba');
+    "> insert into Branch (branch_id, branch_city) values (396, 'Hukeng');
+    "> insert into Branch (branch_id, branch_city) values (397, 'Mab^Xbar');
+    "> insert into Branch (branch_id, branch_city) values (398, 'GadE>in Han');
+    "> insert into Branch (branch_id, branch_city) values (399, 'Rivadavia');
+    "> insert into Branch (branch_id, branch_city) values (400, 'Sanying');
+    "> insert into Branch (branch_id, branch_city) values (401, 'Kuttu');
+    "> insert into Branch (branch_id, branch_city) values (402, 'Bua Yai');
+    "> insert into Branch (branch_id, branch_city) values (403, 'Zlechov');
+    "> insert into Branch (branch_id, branch_city) values (404, 'Biltine');
+    "> insert into Branch (branch_id, branch_city) values (405, 'Beja');
+    "> insert into Branch (branch_id, branch_city) values (406, 'Volzhskiy');
+    "> insert into Branch (branch_id, branch_city) values (407, 'Cajazeiras');
+    "> insert into Branch (branch_id, branch_city) values (408, 'Chipoka');
+    "> insert into Branch (branch_id, branch_city) values (409, 'Eberdun Wula');
+    "> insert into Branch (branch_id, branch_city) values (410, 'Gumalang');
+    "> insert into Branch (branch_id, branch_city) values (411, 'Canguaretama');
+    "> insert into Branch (branch_id, branch_city) values (412, 'Tajinan');
+    "> insert into Branch (branch_id, branch_city) values (413, 'AlingsC%s');
+    "> insert into Branch (branch_id, branch_city) values (414, 'Cilongkrang');
+    "> insert into Branch (branch_id, branch_city) values (415, 'Manyana');
+    "> insert into Branch (branch_id, branch_city) values (416, 'Baltimore');
+    "> insert into Branch (branch_id, branch_city) values (417, 'Jinjiang');
+    "> insert into Branch (branch_id, branch_city) values (418, 'MalesC-na');
+    "> insert into Branch (branch_id, branch_city) values (419, 'Casal Novo');
+    "> insert into Branch (branch_id, branch_city) values (420, 'KhD^Anpur');
+    "> insert into Branch (branch_id, branch_city) values (421, 'Landi Kotal');
+    "> insert into Branch (branch_id, branch_city) values (422, 'Orange');
+    "> insert into Branch (branch_id, branch_city) values (423, 'Belogorsk');
+    "> insert into Branch (branch_id, branch_city) values (424, 'North Little Rock');
+    "> insert into Branch (branch_id, branch_city) values (425, 'Mokronog');
+    "> insert into Branch (branch_id, branch_city) values (426, 'Hamburg');
+    "> insert into Branch (branch_id, branch_city) values (427, 'Elias Fausto');
+    "> insert into Branch (branch_id, branch_city) values (428, 'Montalegre');
+    "> insert into Branch (branch_id, branch_city) values (429, 'Xiaoxi');
+    "> insert into Branch (branch_id, branch_city) values (430, 'Palanas');
+    "> insert into Branch (branch_id, branch_city) values (431, 'London');
+    "> insert into Branch (branch_id, branch_city) values (432, 'Viana');
+    "> insert into Branch (branch_id, branch_city) values (433, 'YlC$maa');
+    "> insert into Branch (branch_id, branch_city) values (434, 'Rudna');
+    "> insert into Branch (branch_id, branch_city) values (435, 'Guli');
+    "> insert into Branch (branch_id, branch_city) values (436, 'Ipaba');
+    "> insert into Branch (branch_id, branch_city) values (437, 'Kudang');
+    "> insert into Branch (branch_id, branch_city) values (438, 'Qiaotou');
+    "> insert into Branch (branch_id, branch_city) values (439, 'GuantC!namo');
+    "> insert into Branch (branch_id, branch_city) values (440, 'ZC<rich');
+    "> insert into Branch (branch_id, branch_city) values (441, 'Palangue');
+    "> insert into Branch (branch_id, branch_city) values (442, 'Zhouzai');
+    "> insert into Branch (branch_id, branch_city) values (443, 'Xingxi');
+    "> insert into Branch (branch_id, branch_city) values (444, 'La Guadalupe');
+    "> insert into Branch (branch_id, branch_city) values (445, 'ChC=nov');
+    "> insert into Branch (branch_id, branch_city) values (446, 'Fort LibertC)');
+    "> insert into Branch (branch_id, branch_city) values (447, 'Tours');
+    "> insert into Branch (branch_id, branch_city) values (448, 'Zhigulevsk');
+    "> insert into Branch (branch_id, branch_city) values (449, 'Laugar');
+    "> insert into Branch (branch_id, branch_city) values (450, 'E^ADknica');
+    "> insert into Branch (branch_id, branch_city) values (451, 'Bernay');
+    "> insert into Branch (branch_id, branch_city) values (452, 'San Jose');
+    "> insert into Branch (branch_id, branch_city) values (453, 'Dessalines');
+    "> insert into Branch (branch_id, branch_city) values (454, 'Kota Kinabalu');
+    "> insert into Branch (branch_id, branch_city) values (455, 'Isidro Fabela');
+    "> insert into Branch (branch_id, branch_city) values (456, 'Huayuan');
+    "> insert into Branch (branch_id, branch_city) values (457, 'Cotabato');
+    "> insert into Branch (branch_id, branch_city) values (458, 'Turbo');
+    "> insert into Branch (branch_id, branch_city) values (459, 'Dimiao');
+    "> insert into Branch (branch_id, branch_city) values (460, 'Sunagawa');
+    "> insert into Branch (branch_id, branch_city) values (461, 'Machang');
+    "> insert into Branch (branch_id, branch_city) values (462, 'Narsingdi');
+    "> insert into Branch (branch_id, branch_city) values (463, 'Leon');
+    "> insert into Branch (branch_id, branch_city) values (464, 'Pasongsongan');
+    "> insert into Branch (branch_id, branch_city) values (465, 'Novolugovoye');
+    "> insert into Branch (branch_id, branch_city) values (466, 'Mejdan - ObiliD^Gevo');
+    "> insert into Branch (branch_id, branch_city) values (467, 'QuiC1ota');
+    "> insert into Branch (branch_id, branch_city) values (468, 'Krajan');
+    "> insert into Branch (branch_id, branch_city) values (469, 'Huangnaihai');
+    "> insert into Branch (branch_id, branch_city) values (470, 'Palagao Norte');
+    "> insert into Branch (branch_id, branch_city) values (471, 'Fomento');
+    "> insert into Branch (branch_id, branch_city) values (472, 'Pacasmayo');
+    "> insert into Branch (branch_id, branch_city) values (473, 'Carmen');
+    "> insert into Branch (branch_id, branch_city) values (474, 'Molinos');
+    "> insert into Branch (branch_id, branch_city) values (475, 'Ermida');
+    "> insert into Branch (branch_id, branch_city) values (476, 'Santa Rita');
+    "> insert into Branch (branch_id, branch_city) values (477, 'Huaniao');
+    "> insert into Branch (branch_id, branch_city) values (478, 'Widorokandang');
+    "> insert into Branch (branch_id, branch_city) values (479, 'Bobadela');
+    "> insert into Branch (branch_id, branch_city) values (480, 'Leidschendam');
+    "> insert into Branch (branch_id, branch_city) values (481, 'Wonorejo Dua');
+    "> insert into Branch (branch_id, branch_city) values (482, 'Cvry');
+    "> insert into Branch (branch_id, branch_city) values (483, 'Yongping');
+    "> insert into Branch (branch_id, branch_city) values (484, 'HC6drC6gC6');
+    "> insert into Branch (branch_id, branch_city) values (485, 'Dori');
+    "> insert into Branch (branch_id, branch_city) values (486, 'Huntington');
+    "> insert into Branch (branch_id, branch_city) values (487, 'Wadung');
+    "> insert into Branch (branch_id, branch_city) values (488, 'Lambton Shores');
+    "> insert into Branch (branch_id, branch_city) values (489, 'Tambaksari');
+    "> insert into Branch (branch_id, branch_city) values (490, 'Tiexi');
+    "> insert into Branch (branch_id, branch_city) values (491, 'Baculin');
+    "> insert into Branch (branch_id, branch_city) values (492, 'Carcassonne');
+    "> insert into Branch (branch_id, branch_city) values (493, 'Tubli');
+    "> insert into Branch (branch_id, branch_city) values (494, 'Wenfu');
+    "> insert into Branch (branch_id, branch_city) values (495, 'Sundbyberg');
+    "> insert into Branch (branch_id, branch_city) values (496, 'Sloboda');
+    "> insert into Branch (branch_id, branch_city) values (497, 'Songfeng');
+    "> insert into Branch (branch_id, branch_city) values (498, 'Tamanan');
+    "> insert into Branch (branch_id, branch_city) values (499, 'Palenggihan');
+    "> insert into Branch (branch_id, branch_city) values (500, 'Balut');
+    "> insert into Branch (branch_id, branch_city) values (501, 'Luchenza');
+    "> insert into Branch (branch_id, branch_city) values (502, 'Manolo Fortich');
+    "> insert into Branch (branch_id, branch_city) values (503, 'Qiban');
+    "> insert into Branch (branch_id, branch_city) values (504, 'Janowice');
+    "> insert into Branch (branch_id, branch_city) values (505, 'Kiryandongo');
+    "> insert into Branch (branch_id, branch_city) values (506, 'Carcavelos');
+    "> insert into Branch (branch_id, branch_city) values (507, 'Zhongben');
+    "> insert into Branch (branch_id, branch_city) values (508, 'Tanarara');
+    "> insert into Branch (branch_id, branch_city) values (509, 'Horvati');
+    "> insert into Branch (branch_id, branch_city) values (510, 'E^Aazy');
+    "> insert into Branch (branch_id, branch_city) values (511, 'Jixi');
+    "> insert into Branch (branch_id, branch_city) values (512, 'Malibong East');
+    "> insert into Branch (branch_id, branch_city) values (513, 'Cali');
+    "> insert into Branch (branch_id, branch_city) values (514, 'Kalinovo');
+    "> insert into Branch (branch_id, branch_city) values (515, 'Yanjiang');
+    "> insert into Branch (branch_id, branch_city) values (516, 'Bhunya');
+    "> insert into Branch (branch_id, branch_city) values (517, 'Yangce');
+    "> insert into Branch (branch_id, branch_city) values (518, 'Quanxi');
+    "> insert into Branch (branch_id, branch_city) values (519, 'Wenqiao');
+    "> insert into Branch (branch_id, branch_city) values (520, 'Sitampiky');
+    "> insert into Branch (branch_id, branch_city) values (521, 'Baishigou');
+    "> insert into Branch (branch_id, branch_city) values (522, 'Sirte');
+    "> insert into Branch (branch_id, branch_city) values (523, 'Wonorejo');
+    "> insert into Branch (branch_id, branch_city) values (524, 'Ulluaya');
+    "> insert into Branch (branch_id, branch_city) values (525, 'Xishan');
+    "> insert into Branch (branch_id, branch_city) values (526, 'Kotaagung');
+    "> insert into Branch (branch_id, branch_city) values (527, 'Grati Satu');
+    "> insert into Branch (branch_id, branch_city) values (528, 'Kasingan');
+    "> insert into Branch (branch_id, branch_city) values (529, 'Olopa');
+    "> insert into Branch (branch_id, branch_city) values (530, 'Al MisrD^Akh');
+    "> insert into Branch (branch_id, branch_city) values (531, 'ChC"u ThC nh');
+    '> insert into Branch (branch_id, branch_city) values (532, 'Huangkeng');
+    '> insert into Branch (branch_id, branch_city) values (533, 'Mankoeng');
+    '> insert into Branch (branch_id, branch_city) values (534, 'Stocksund');
+    '> insert into Branch (branch_id, branch_city) values (535, 'Dapitan');
+    '> insert into Branch (branch_id, branch_city) values (536, 'Karvia');
+    '> insert into Branch (branch_id, branch_city) values (537, 'Santa Cruz');
+    '> insert into Branch (branch_id, branch_city) values (538, 'Hayama');
+    '> insert into Branch (branch_id, branch_city) values (539, 'Issad');
+    '> insert into Branch (branch_id, branch_city) values (540, 'Lanat');
+    '> insert into Branch (branch_id, branch_city) values (541, 'Qiansuo');
+    '> insert into Branch (branch_id, branch_city) values (542, 'Rawang');
+    '> insert into Branch (branch_id, branch_city) values (543, 'Tumbi');
+    '> insert into Branch (branch_id, branch_city) values (544, 'b^XAwaj');
+    '> insert into Branch (branch_id, branch_city) values (545, 'Vinsady');
+    '> insert into Branch (branch_id, branch_city) values (546, 'LeneE!ice');
+    '> insert into Branch (branch_id, branch_city) values (547, 'Sinacaban');
+    '> insert into Branch (branch_id, branch_city) values (548, 'Sindanghayu');
+    '> insert into Branch (branch_id, branch_city) values (549, 'Solina');
+    '> insert into Branch (branch_id, branch_city) values (550, 'Kholm');
+    '> insert into Branch (branch_id, branch_city) values (551, 'Wuhu');
+    '> insert into Branch (branch_id, branch_city) values (552, 'Yongban');
+    '> insert into Branch (branch_id, branch_city) values (553, 'Sergach');
+    '> insert into Branch (branch_id, branch_city) values (554, 'Chengcun');
+    '> insert into Branch (branch_id, branch_city) values (555, 'LC!pas');
+    '> insert into Branch (branch_id, branch_city) values (556, 'TubarC#o');
+    -> insert into Branch (branch_id, branch_city) values (557, 'Tigbao');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ywiec');
+insert into Branch (branch_id, branch_city) values (381, 'Xinshi');
+ins' at line 1
+mysql> insert into Branch (branch_id, branch_city) values (558, 'Lingmen');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (559, 'San Jacinto');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (560, 'Kimje');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (561, 'Peachland');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (562, 'JC5hvi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (563, 'Uppsala');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (564, 'PinhC#o');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (565, 'Zamostochcha');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (566, 'Zyuzino');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (567, 'Vaughan');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (568, 'Cachoeirinha');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (569, 'Iturama');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (570, 'Shuangjing');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (571, 'Escada');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (572, 'OlofstrC6m');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (573, 'Mbalmayo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (574, 'Bang Phlat');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (575, 'Ormstown');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (576, 'Tobrtkobl Shahri');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (577, 'Zhonghe');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (578, 'Tanout');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (579, 'Semampirbarat');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (580, 'NC-kaia');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (581, 'Jiangkou');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (582, 'Bankeryd');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (583, 'P P0P4P>P2P8Q ');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (584, 'Santa Fe');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (585, 'Sagay');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (586, 'MariD^Gka');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (587, 'Fenkeng');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (588, 'Leigongjian');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (589, 'Tuanfeng');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (590, 'Maganha');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (591, 'Shiqian');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (592, 'Bella Vista');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (593, 'Puerto BerrC-o');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (594, 'OsC3rio');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (595, 'Straszydle');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (596, 'YlC$maa');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (597, 'Hingatungan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (598, 'Amorim');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (599, 'Quilmes');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (600, 'Beberon');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (601, 'Dianbu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (602, 'Kandava');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (603, 'Pribrezhnyy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (604, 'Bosobolo');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (605, 'Batusangkar');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (606, 'Owando');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (607, 'BE-stonqalba');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (608, 'Synya');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (609, 'Stanley');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (610, 'Kebonan');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (611, 'Mbale');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (612, 'Tondano');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (613, 'Liminka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (614, 'Milicz');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (615, 'Zea');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (616, 'Cana ChapetC3n');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (617, 'Mayo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (618, 'Chixi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (619, 'Erhe');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (620, 'Tarata');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (621, 'Pittsburgh');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (622, 'Habry');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (623, 'Mueang Suang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (624, 'Morangis');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (625, 'Dulce Nombre');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (626, 'Zhanghekou');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (627, 'Bartsrashen');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (628, 'Kulary');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (629, 'Herrljunga');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (630, 'LyL^A SF!n');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (631, 'Chibombo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (632, 'Groningen');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (633, 'Zarasai');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (634, 'Parungjawa');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (635, 'Fria');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (636, 'Cpinal');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (637, 'Yongchang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (638, 'Castleblayney');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (639, 'Ccuntuma');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (640, 'Bau');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (641, 'Kiruru');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (642, 'Candelaria');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (643, 'Silongin');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (644, 'Wuning');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (645, 'Tanlad');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (646, 'Metz');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (647, 'Medvedovskaya');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (648, 'Wysoka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (649, 'PC)rigny');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (650, 'KE-rdzhali');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (651, 'Vnukovo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (652, 'Dancheng');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (653, 'Zhashkiv');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (654, 'Krikil');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (655, 'Chinch''E^On');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (656, 'Chifeng');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (657, 'Chexi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (658, 'Xianghu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (659, 'Yangxu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (660, 'Kachar');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (661, 'Guantang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (662, 'Tullinge');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (663, 'Bang Ban');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (664, 'Koktokay');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (665, 'Minggang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (666, 'Tigilb');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (667, 'Berezne');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (668, 'Chahannao');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (669, 'C^QuC1oa');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (670, 'Meghrashen');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (671, 'Tariji');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (672, 'Onsala');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (673, 'AD+bak');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (674, 'Bandaragung');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (675, 'Huangyang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (676, 'Chencun');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (677, 'Esperanza');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (678, 'Monaragala');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (679, 'Wilkes Barre');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (680, 'HornC- BEC-za');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (681, 'Skolkovo');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (682, 'Dongmafang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (683, 'ShalqD+ya');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (684, 'Gununganyartambak Tengah' );
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (685, 'Asykata');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (686, 'Bilajer');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (687, 'TucanC-');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (688, 'Jinta');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (689, 'Huntington Beach');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (690, 'Bronx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (691, 'Jinquan');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (692, 'Fonte Boa');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (693, 'Helsingborg');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (694, 'Herrljunga');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (695, 'MiE[KrD^Atah');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (696, 'Stockholm');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (697, 'Sanhe');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (698, 'Ningban');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (699, 'Keyinhe');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (700, 'Saga');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (701, 'Puerto Cabezas');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (702, 'Topory');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (703, 'San Pedro Pinula');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (704, 'San RamC3n');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (705, 'Amucao');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (706, 'Altanbulag');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (707, 'Kampong Cham');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (708, 'Sakon Nakhon');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (709, 'Magang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (710, 'Zolotkovo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (711, 'Konkwesso');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (712, 'ME-glizh');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (713, 'Olho Marinho');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (714, 'Ban Huai Thalaeng');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (715, 'Nianpan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (716, 'Koina');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (717, 'BC!lsamo Oriental');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (718, 'Santa LucC-a');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (719, 'Las Palmas');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (720, 'Shiban');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (721, 'Bukuru');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (722, 'Charlotte Amalie');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (723, 'Annotto Bay');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (724, 'E^AD^Eka Prudnicka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (725, 'TC)nenkou');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (726, 'EckerC6');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (727, 'Lahat');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (728, 'Paripiranga');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (729, 'Soukkouma');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (730, 'Sakaraha');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (731, 'Al b^XAwjah');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (732, 'Bondokodi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (733, 'Huifeng');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (734, 'Qalb^Xeh-ye KhvD^Ajeh');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (735, 'Longzhouwan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (736, 'BrC)tigny-sur-Orge');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (737, 'San Juan Bautista');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (738, 'Cherkasskoye');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (739, 'Anuling');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (740, 'Chengxiang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (741, 'Waepau');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (742, 'Tuopu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (743, 'JunC-n');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (744, 'Miguel Calmon');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (745, 'Santa Rosa');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (746, 'Gllogjan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (747, 'BD^Asawul');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (748, 'Oklahoma City');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (749, 'Fort Smith');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (750, 'Nakhon Nayok');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (751, 'Huntsville');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (752, 'Kadukaung');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (753, 'Paris La DC)fense');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (754, 'Mikuni');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (755, 'Gondifelos');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (756, 'Sarrazola');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (757, 'Bida');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (758, 'Korostyshiv');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (759, 'Sukasada');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (760, 'Caldas');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (761, 'Xuedian');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (762, 'SuC'');
+    '> insert into Branch (branch_id, branch_city) values (763, 'Saihan Tal');
+    '> insert into Branch (branch_id, branch_city) values (764, 'Okaya');
+    '> insert into Branch (branch_id, branch_city) values (765, 'El Carmen');
+    '> insert into Branch (branch_id, branch_city) values (766, 'Krajan Rowokangkung');
+    '> insert into Branch (branch_id, branch_city) values (767, 'Dibba Al-Hisn');
+    '> insert into Branch (branch_id, branch_city) values (768, 'Lingdong');
+    '> insert into Branch (branch_id, branch_city) values (769, 'WDgorzyno');
+    '> insert into Branch (branch_id, branch_city) values (770, 'Crebro');
+    '> insert into Branch (branch_id, branch_city) values (771, 'Foz Sousa');
+    '> insert into Branch (branch_id, branch_city) values (772, 'Las Trojes');
+    '> insert into Branch (branch_id, branch_city) values (773, 'Saint-Louis');
+    '> insert into Branch (branch_id, branch_city) values (774, 'Adamantina');
+    '> insert into Branch (branch_id, branch_city) values (775, 'LF0F!ng Ba:1ng');
+    '> insert into Branch (branch_id, branch_city) values (776, 'Gamleby');
+    '> insert into Branch (branch_id, branch_city) values (777, 'Garunggang');
+    '> insert into Branch (branch_id, branch_city) values (778, 'Zhenzhushan');
+    '> insert into Branch (branch_id, branch_city) values (779, 'Rudna');
+    '> insert into Branch (branch_id, branch_city) values (780, 'Privlaka');
+    '> insert into Branch (branch_id, branch_city) values (781, 'Al QurayshD+yah');
+    '> insert into Branch (branch_id, branch_city) values (782, 'Chengdong');
+    '> insert into Branch (branch_id, branch_city) values (783, 'Ambo Village');
+    '> insert into Branch (branch_id, branch_city) values (784, 'Jinshan');
+    '> insert into Branch (branch_id, branch_city) values (785, 'Uliastay');
+    '> insert into Branch (branch_id, branch_city) values (786, 'Zoumaling');
+    '> insert into Branch (branch_id, branch_city) values (787, 'Yenangyaung');
+    '> insert into Branch (branch_id, branch_city) values (788, 'North Side');
+    '> insert into Branch (branch_id, branch_city) values (789, 'Borisova Griva');
+    '> insert into Branch (branch_id, branch_city) values (790, 'Roche-C -Bateau');
+    '> insert into Branch (branch_id, branch_city) values (791, 'SC#o Manuel');
+    -> insert into Branch (branch_id, branch_city) values (792, 'Xiakouyi');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Saihan Tal');
+insert into Branch (branch_id, branch_city) values (764, 'Okaya');' at line 1
+mysql> insert into Branch (branch_id, branch_city) values (793, 'Bakalang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (794, 'Ampahana');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (795, 'WD^Esosz');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (796, 'AnC!vra');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (797, 'Neglasari');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (798, 'Yuli');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (799, 'Lynn');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (800, 'AntC3nio Enes');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (801, 'Fengjiang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (802, 'Yangmingbu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (803, 'Kiarajangkung');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (804, 'Ostravice');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (805, 'Malabang');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (806, 'Kuzbminskiye Otverzhki'); [Amysql> insert into Branch (branch_id, branch_city) values (806, 'Kuzbminskiye Otverzhki')[K;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (807, 'Nashville');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (808, 'Spytkowice');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (809, 'Kepuh');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (810, 'Pau');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (811, 'Fukagawa');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (812, 'Novyye CherC+mushki');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (813, 'Daqiao');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (814, 'Kutorejo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (815, 'Cartagena');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (816, 'Tekik Wetan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (817, 'JimaguayC:');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (818, 'Kuidou');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (819, 'At-Bashi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (820, 'Qingkenpao');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (821, 'Kasungu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (822, 'Nanping');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (823, 'Gaozhou');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (824, 'Amiens');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (825, 'Kujung');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (826, 'Biloxi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (827, 'Qianqiao');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (828, 'Szemud');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (829, 'Basel');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (830, 'ItacurubC- del Rosario'); [Amysql> insert into Branch (branch_id, branch_city) values (830, 'ItacurubC- del Rosario')[K;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (831, 'StarC! HuE%');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (832, 'Xiping');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (833, 'Stockholm');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (834, 'Ilbskiy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (835, 'TvE-rditsa');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (836, 'El Zapote');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (837, 'KE
+    '> chi-shi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (838, 'San Francisco');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (839, 'Sawankhalok');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (840, 'Abut');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (841, 'Haramgai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (842, 'El Obeid');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (843, 'West Palm Beach');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (844, 'Lutou');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (845, 'QaffD+n');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (846, 'La Agustina');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (847, 'Alkmaar');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (848, 'Roanne');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (849, 'Thanatpin');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (850, 'Karangasem');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (851, 'Huaitu');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (852, 'Calsib');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (853, 'Sumbermanggis');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (854, 'Guebwiller');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (855, 'Xinli');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (856, 'Kantyshevo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (857, 'Cabitan');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (858, 'EgindikC6l');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (859, 'MutatC!');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (860, 'Ciloa');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (861, 'Aulnay-sous-Bois');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (862, 'Bouctouche');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (863, 'Novopokrovka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (864, 'Sydney');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (865, 'Dengzishan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (866, 'Taixi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (867, 'Xiema');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (868, 'CumanC!');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (869, 'Magadan');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (870, 'Lahar');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (871, 'Xiping');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (872, 'Kedrovoye');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (873, 'Krajan Satu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (874, 'Mloko');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (875, 'Bolbshoye Selo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (876, 'PomiechC3wek');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (877, 'PrzemyE
+    '> insert into Branch (branch_id, branch_city) values (878, 'Paulpietersburg');
+    '> insert into Branch (branch_id, branch_city) values (879, 'SC#o JosC) do Rio Pardo') ;
+    -> insert into Branch (branch_id, branch_city) values (880, 'Outeiro');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Paulpietersburg');
+insert into Branch (branch_id, branch_city) values (879, 'SC
+' at line 1
+mysql> insert into Branch (branch_id, branch_city) values (881, 'Santa BC!rbara');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (882, 'Wang Noi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (883, 'LuleC%');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (884, 'Akkolb');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (885, 'Xiahong');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (886, 'ReykjanesbC&r');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (887, 'Zhuxing Chaoxianzu');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (888, 'KomornC- Lhotka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (889, 'Ca:'u Ga;[7@(i-search)`': insert into Branch (branch_id, branch_city) values (889, 'Ca:'u Ga;([8@failed i-search)`'': insert into Branch (branch_id, branch_city) values (889, 'Ca:'u Ga;(failed i-search)`')': insert into Branch (branch_id, branch_city) values (889, 'Ca:'u Ga; [A(failed i-search)`');': insert into Branch (branch_id, branch_city) values (889, 'Ca:'u Ga;;[A[16Pmysql> insert into Branch (branch_id, branch_city) values (889, 'Ca:'u Ga;
+[K[Amysql> insert into Branch (branch_id, branch_city) values (889, 'Ca:'u Ga;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'u Ga' at line 1
+mysql> insert into Branch (branch_id, branch_city) values (890, 'Gaocang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (891, 'Bohai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (892, 'Xinyang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (893, 'Semanding Barat');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (894, 'Gulod');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (895, 'Frederiksberg');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (896, 'Junban');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (897, 'Budapest');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (898, 'Roxas');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (899, 'Huangyang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (900, 'NykC6ping');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (901, 'Ajuy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (902, 'Primorsko-Akhtarsk');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (903, 'Moulay Bouchta');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (904, 'Huangshui');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (905, 'PatquC-a');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (906, 'ArlC6v');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (907, 'SillamC$e');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (908, 'Bulbul');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (909, 'Kostryzhivka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (910, 'PerE!tejn');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (911, 'Cibolang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (912, 'Boshkengash');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (913, 'Zengtian');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (914, 'Wuli');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (915, 'Igbo-Ukwu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (916, 'La Paz');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (917, 'KokkinC3choma');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (918, 'Houston');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (919, 'Pirca');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (920, 'Guijalo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (921, 'Donghoufang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (922, 'NC-kiti');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (923, 'ParadyE<');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (924, 'Gujun');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (925, 'Beiban');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (926, 'Stockholm');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (927, 'Gunung');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (928, 'Barabedang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (929, 'Zvole');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (930, 'KonD^Arak');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (931, 'Oslo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (932, 'KamennC) E=ehrovice');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (933, 'Strel''na');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (934, 'Nikolayevsk');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (935, 'Calzada Larga');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (936, 'Giyon');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (937, 'Huddinge');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (938, 'Oborniki E^ZlD^Eskie');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (939, 'Mertert');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (940, 'Kubachi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (941, 'Porto Alto');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (942, 'Filabusi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (943, 'Piippola');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (944, 'FayaouC)');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (945, 'Emmeloord');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (946, 'Llano de Piedra');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (947, 'Rizhao');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (948, 'InD^Qija');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (949, 'EirunepC)');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (950, 'Nong Khai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (951, 'Dashi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (952, 'Seremban');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (953, 'Al ManD^Aqil');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (954, 'Maogou');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (955, 'Tengah');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (956, 'Woha');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (957, 'Achiaman');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (958, 'Bordeaux');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (959, 'Yangzhuang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (960, 'Ajaccio');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (961, 'Shanhaiguan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (962, 'Sv. Anton');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (963, 'Barda');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (964, 'Heka');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (965, 'Yeosu');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (966, 'Lhuentse');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (967, 'Wenfu');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (968, 'Qiganjidie');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (969, 'Tebingtinggi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (970, 'Lagos');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (971, 'Kan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (972, 'Cavinti');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (973, 'Liulang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (974, 'Rangmanten');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (975, 'Novaya Chigla');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (976, 'Soroti');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (977, 'Karangbaru');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (978, 'Cikuning');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (979, 'Longbo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (980, 'Yancheng');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (981, 'Chigasaki');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (982, 'AbnE+b');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (983, 'Tianyi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (984, 'Niyang');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (985, 'GrC%bo');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (986, 'Baishui');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (987, 'Ciudad Vieja');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (988, 'Zhangjiapan');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (989, 'Huatajata');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (990, 'Pyinmana');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (991, 'Gurbuki');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (992, 'Palma Gil');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (993, 'Langjun');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (994, 'Linton');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (995, 'Biryukove');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (996, 'Pante Raja');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Branch (branch_id, branch_city) values (997, 'BaraC'ais');
+    '> insert into Branch (branch_id, branch_city) values (998, 'Janakkala');
+    '> insert into Branch (branch_id, branch_city) values (999, 'Xambabazar');
+    '> insert into Branch (branch_id, branch_city) values (1000, 'PiteC%');
+    '> 
+    '> ^CCtrl-C -- exit!
+Aborted
+]0;arjun@arjun-Veertu: ~arjun@arjun-Veertu:~$ mysql -u root -p test
+Enter password: 
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 48
+Server version: 5.5.54-0ubuntu0.14.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> ls  use table test;
+ERROR 1049 (42000): Unknown database 'table'
+mysql> use table test;[1@][1P[1P[1P[1P[1P[1P[1P
+Database changed
+mysql> show tables
+    -> ;
++----------------+
+| Tables_in_test |
++----------------+
+| Branch         |
+| Customer       |
+| Employee       |
+| Service        |
++----------------+
+4 rows in set (0.00 sec)
+
+mysql> sho   desr cribe Branch;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| branch_id   | int(11)  | YES  |     | NULL    |       |
+| branch_city | char(50) | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from Bre anch;
++-----------+----------------------------+
+| branch_id | branch_city                |
++-----------+----------------------------+
+|         1 | Yoshida-kasugach           |
+|         2 | Guanaja                    |
+|         3 | ItanhaC)m                  |
+|         4 | Krajan Pakel               |
+|         5 | IperC3                     |
+|         6 | Zhemtala                   |
+|         7 | Ibotirama                  |
+|         8 | ChokwC)                    |
+|         9 | SertC"nia                  |
+|        10 | Verd                       |
+|        11 | Namioka                    |
+|        12 | Steinkjer                  |
+|        13 | Dourbali                   |
+|        14 | Poctol                     |
+|        15 | Alubijid                   |
+|        16 | Saldanha                   |
+|        17 | Pekan                      |
+|        18 | Heshui                     |
+|        19 | Kambing                    |
+|        20 | Baozhu                     |
+|        21 | Dakhla                     |
+|        22 | Morales                    |
+|        23 | Manggis                    |
+|        24 | Bochum                     |
+|        25 | Chittagong                 |
+|        26 | Bolotnoye                  |
+|        27 | Saint-Denis                |
+|        28 | Gambang                    |
+|        29 | Alegrete                   |
+|        30 | El Corpus                  |
+|        31 | Luoshan                    |
+|        32 | Zhouxi                     |
+|        33 | Wuppertal                  |
+|        34 | Nacka                      |
+|        35 | El Cocuy                   |
+|        36 | Jinrongjie                 |
+|        37 | Bezhta                     |
+|        38 | Cachipay                   |
+|        39 | Susanino                   |
+|        40 | Bajiao                     |
+|        41 | Richmond                   |
+|        42 | Xincheng Chengguanzhen     |
+|        43 | Nyachera                   |
+|        44 | Liren                      |
+|        45 | Campos Novos               |
+|        46 | AmpelC3kipoi               |
+|        47 | Brampton                   |
+|        48 | Toshbuloq                  |
+|        49 | Zheleznogorsk              |
+|        50 | Maseru                     |
+|        51 | Helsingborg                |
+|        52 | San Juan                   |
+|        53 | Chengtian                  |
+|        54 | Thua:-n Nam                |
+|        55 | Hairag                     |
+|        56 | TC-lisos                   |
+|        57 | Smolyaninovo               |
+|        58 | Damaying                   |
+|        59 | Villa Nueva                |
+|        60 | Saint Hubert               |
+|        61 | Marianowo                  |
+|        62 | Barurao                    |
+|        63 | Vyselki                    |
+|        64 | Beijie                     |
+|        65 | Ash Shuqayrah              |
+|        66 | Phu Phiang                 |
+|        67 | Paseyan                    |
+|        68 | Santa AdC)lia              |
+|        69 | Trzcinica                  |
+|        70 | Torre de Moncorvo          |
+|        71 | Manizales                  |
+|        72 | Jazovo                     |
+|        73 | Arras                      |
+|        74 | Longos                     |
+|        75 | Katyr-Yurt                 |
+|        76 | Gunjur Kuta                |
+|        77 | Chaoyang                   |
+|        78 | Kamionka                   |
+|        79 | Capilla del Monte          |
+|        80 | SC6dertC$lje               |
+|        81 | Ambohitrolomahitsy         |
+|        82 | Campos                     |
+|        83 | Rocky Mountain House       |
+|        84 | Bloemfontein               |
+|        85 | Tchaourou                  |
+|        86 | Nandu                      |
+|        87 | Shifo                      |
+|        88 | Austin                     |
+|        89 | Cikujang                   |
+|        90 | Laholm                     |
+|        91 | Pangkajene                 |
+|        92 | Dayuan                     |
+|        93 | Karlskoga                  |
+|        94 | CelendC-n                  |
+|        95 | Daming                     |
+|        96 | Guanghou                   |
+|        97 | Baoyang                    |
+|        98 | Yelizovo                   |
+|        99 | Asheville                  |
+|       100 | Neob                       |
+|       101 | Borovskoy                  |
+|       102 | Memphis                    |
+|       103 | Gudauta                    |
+|       104 | Ningyuan                   |
+|       105 | Avdzaga                    |
+|       106 | Sharga                     |
+|       107 | Bobowo                     |
+|       108 | Pereira                    |
+|       109 | Poniatowa                  |
+|       110 | EaszczC3w                 |
+|       111 | Cpsonas                   |
+|       112 | Beiban                     |
+|       113 | Jiaxing                    |
+|       114 | Pojan                      |
+|       115 | Changting                  |
+|       116 | Farmington                 |
+|       117 | MjC6lby                    |
+|       118 | Nikolayevskaya             |
+|       119 | Chenda                     |
+|       120 | Solosolo                   |
+|       121 | KhDngDh DogrDn          |
+|       122 | Sudislavlb                 |
+|       123 | BodC8                      |
+|       124 | Patong                     |
+|       125 | Huangnaihai                |
+|       126 | Brest                      |
+|       127 | Dayangqi                   |
+|       128 | Davila                     |
+|       129 | Kebili                     |
+|       130 | Canomoy                    |
+|       131 | Tangjia                    |
+|       132 | Zhenxing                   |
+|       133 | Jinping                    |
+|       134 | Nizhnepavlovka             |
+|       135 | Tinabogan                  |
+|       136 | Xiaomei                    |
+|       137 | GirC3n                     |
+|       138 | Klobuky                    |
+|       139 | Banyubang                  |
+|       140 | Hongor                     |
+|       141 | Shanghu                    |
+|       142 | Kama                       |
+|       143 | Yaogu                      |
+|       144 | Truskolasy                 |
+|       145 | Jajaway                    |
+|       146 | Taiyang                    |
+|       147 | Agusan                     |
+|       148 | Cirompang                  |
+|       149 | Fukadale                   |
+|       150 | San CristC3bal             |
+|       151 | Santa Cruz del Norte       |
+|       152 | Elbasan                    |
+|       153 | Stockholm                  |
+|       154 | Recreio                    |
+|       155 | Shuangjie                  |
+|       156 | Qorashina                  |
+|       157 | Lukashin                   |
+|       158 | Venustiano Carranza        |
+|       159 | Independencia              |
+|       160 | BeE!ka                     |
+|       161 | BeneE!ov nad PlouD
+nicC-   |
+|       162 | LeE Podlaska               |
+|       163 | Krong Pi Nang              |
+|       164 | Pingqiao                   |
+|       165 | Vilbnyansbk                |
+|       166 | SC#o Domingos do MaranhC#o |
+|       167 | Wufeng                     |
+|       168 | Cineumbeuy                 |
+|       169 | Kosamphi Nakhon            |
+|       170 | Reriz                      |
+|       171 | Huddinge                   |
+|       172 | Odivelas                   |
+|       173 | Villa Ojo de Agua          |
+|       174 | Lyon                       |
+|       175 | AE# E"D+rah                |
+|       176 | MarD
+elji                  |
+|       177 | Belo Oriente               |
+|       178 | Ibaraki                    |
+|       179 | LeC3n                      |
+|       180 | ThakhC(k                   |
+|       181 | Ba:/c Ka:!n                |
+|       182 | Buseresere                 |
+|       183 | Songzhuang                 |
+|       184 | Nanhe                      |
+|       185 | Nyagla                     |
+|       186 | Laranjal Paulista          |
+|       187 | Cortezia                   |
+|       188 | Voiron                     |
+|       189 | Likhobory                  |
+|       190 | Xibali                     |
+|       191 | Talisay                    |
+|       192 | Nor Yerznka                |
+|       193 | Dalan                      |
+|       194 | Jiucaigou                  |
+|       195 | BubullimC+                 |
+|       196 | Sofo-Birnin-Gwari          |
+|       197 | Ndago                      |
+|       198 | Stung Treng                |
+|       199 | Buluh Kasap                |
+|       200 | Sofrino                    |
+|       201 | Huamachuco                 |
+|       202 | Mercedes                   |
+|       203 | Cbrego                    |
+|       204 | Huangxi                    |
+|       205 | Anda                       |
+|       206 | Virden                     |
+|       207 | Venilale                   |
+|       208 | Gesikan                    |
+|       209 | Lungaog                    |
+|       210 | Pore                       |
+|       211 | Chayek                     |
+|       212 | Kamenka                    |
+|       213 | Planeta Rica               |
+|       214 | Dandian                    |
+|       215 | Wailebe                    |
+|       216 | Wirral                     |
+|       217 | Geshan                     |
+|       218 | Guihing Proper             |
+|       219 | Esperantina                |
+|       220 | NC$ssjC6                   |
+|       221 | Jiuguan                    |
+|       222 | Liangzeng                  |
+|       223 | Adani                      |
+|       224 | Nakhon Nayok               |
+|       225 | Cruz de los Milagros       |
+|       226 | Santa Valha                |
+|       283 | Maa                        |
+|       284 | Janowice                   |
+|       285 | Guangli                    |
+|       286 | Badajoz                    |
+|       287 | Oslo                       |
+|       288 | Bordeaux                   |
+|       289 | Zhitan                     |
+|       290 | Kanbe                      |
+|       291 | EDknica                   |
+|       292 | Erada                      |
+|       293 | Veinticinco de Mayo        |
+|       294 | Nefta                      |
+|       295 | Santiago AtitlC!n          |
+|       296 | Stepojevac                 |
+|       297 | Yangshufang                |
+|       298 | Bua Yai                    |
+|       299 | Morelos                    |
+|       300 | Tawangrejo                 |
+|       301 | Nikolbskoye                |
+|       302 | Zhendong                   |
+|       303 | Lindi                      |
+|       304 | Bayan Tuohai               |
+|       305 | Zitong                     |
+|       306 | Matsushima                 |
+|       307 | Hekou                      |
+|       308 | MC!laga                    |
+|       309 | Lamongan                   |
+|       310 | Kaskinen                   |
+|       311 | Toutuo                     |
+|       312 | Fujikawaguchiko            |
+|       313 | Luobei                     |
+|       314 | Mosta                      |
+|       315 | Karagandy                  |
+|       316 | Kharlu                     |
+|       317 | Chengfeng                  |
+|       318 | Garland                    |
+|       319 | AlquC-zar                  |
+|       320 | SC#o JoC#o das Lampas      |
+|       321 | Borjomi                    |
+|       322 | ShC+nmC+ri                 |
+|       323 | Venilale                   |
+|       324 | Lebu                       |
+|       325 | Hongqi                     |
+|       326 | Huaibei                    |
+|       327 | AfC!ntou                   |
+|       328 | Torres Novas               |
+|       329 | Zhitang                    |
+|       330 | Rennes                     |
+|       331 | Auxerre                    |
+|       332 | bAmrDn                   |
+|       333 | Santa Ana Huista           |
+|       334 | Beiling                    |
+|       335 | Muhoroni                   |
+|       336 | PP>P;P>QP0P5P2QP:P>P5    |
+|       337 | LitvC-nov                  |
+|       338 | Cran-Gevrier               |
+|       558 | Lingmen                    |
+|       559 | San Jacinto                |
+|       560 | Kimje                      |
+|       561 | Peachland                  |
+|       562 | JC5hvi                     |
+|       563 | Uppsala                    |
+|       564 | PinhC#o                    |
+|       565 | Zamostochcha               |
+|       566 | Zyuzino                    |
+|       567 | Vaughan                    |
+|       568 | Cachoeirinha               |
+|       569 | Iturama                    |
+|       570 | Shuangjing                 |
+|       571 | Escada                     |
+|       572 | OlofstrC6m                 |
+|       573 | Mbalmayo                   |
+|       574 | Bang Phlat                 |
+|       575 | Ormstown                   |
+|       576 | Tobrtkobl Shahri           |
+|       577 | Zhonghe                    |
+|       578 | Tanout                     |
+|       579 | Semampirbarat              |
+|       580 | NC-kaia                    |
+|       581 | Jiangkou                   |
+|       582 | Bankeryd                   |
+|       583 | P P0P4P>P2P8               |
+|       584 | Santa Fe                   |
+|       585 | Sagay                      |
+|       586 | MariDka                   |
+|       587 | Fenkeng                    |
+|       588 | Leigongjian                |
+|       589 | Tuanfeng                   |
+|       590 | Maganha                    |
+|       591 | Shiqian                    |
+|       592 | Bella Vista                |
+|       593 | Puerto BerrC-o             |
+|       594 | OsC3rio                    |
+|       595 | Straszydle                 |
+|       596 | YlC$maa                    |
+|       597 | Hingatungan                |
+|       598 | Amorim                     |
+|       599 | Quilmes                    |
+|       600 | Beberon                    |
+|       601 | Dianbu                     |
+|       602 | Kandava                    |
+|       603 | Pribrezhnyy                |
+|       604 | Bosobolo                   |
+|       605 | Batusangkar                |
+|       606 | Owando                     |
+|       607 | BE-stonqalba               |
+|       608 | Synya                      |
+|       609 | Stanley                    |
+|       610 | Kebonan                    |
+|       611 | Mbale                      |
+|       612 | Tondano                    |
+|       613 | Liminka                    |
+|       614 | Milicz                     |
+|       615 | Zea                        |
+|       616 | Cana ChapetC3n             |
+|       617 | Mayo                       |
+|       618 | Chixi                      |
+|       619 | Erhe                       |
+|       620 | Tarata                     |
+|       621 | Pittsburgh                 |
+|       622 | Habry                      |
+|       623 | Mueang Suang               |
+|       624 | Morangis                   |
+|       625 | Dulce Nombre               |
+|       626 | Zhanghekou                 |
+|       627 | Bartsrashen                |
+|       628 | Kulary                     |
+|       629 | Herrljunga                 |
+|       630 | LyL SF!n                  |
+|       631 | Chibombo                   |
+|       632 | Groningen                  |
+|       633 | Zarasai                    |
+|       634 | Parungjawa                 |
+|       635 | Fria                       |
+|       636 | Cpinal                     |
+|       637 | Yongchang                  |
+|       638 | Castleblayney              |
+|       639 | Ccuntuma                   |
+|       640 | Bau                        |
+|       641 | Kiruru                     |
+|       642 | Candelaria                 |
+|       643 | Silongin                   |
+|       644 | Wuning                     |
+|       645 | Tanlad                     |
+|       646 | Metz                       |
+|       647 | Medvedovskaya              |
+|       648 | Wysoka                     |
+|       649 | PC)rigny                   |
+|       650 | KE-rdzhali                 |
+|       651 | Vnukovo                    |
+|       652 | Dancheng                   |
+|       653 | Zhashkiv                   |
+|       654 | Krikil                     |
+|       655 | Chinch'En                 |
+|       656 | Chifeng                    |
+|       657 | Chexi                      |
+|       658 | Xianghu                    |
+|       659 | Yangxu                     |
+|       660 | Kachar                     |
+|       661 | Guantang                   |
+|       662 | Tullinge                   |
+|       663 | Bang Ban                   |
+|       664 | Koktokay                   |
+|       665 | Minggang                   |
+|       666 | Tigilb                     |
+|       667 | Berezne                    |
+|       668 | Chahannao                  |
+|       669 | CuC1oa                    |
+|       670 | Meghrashen                 |
+|       671 | Tariji                     |
+|       672 | Onsala                     |
+|       673 | AD+bak                     |
+|       674 | Bandaragung                |
+|       675 | Huangyang                  |
+|       676 | Chencun                    |
+|       677 | Esperanza                  |
+|       678 | Monaragala                 |
+|       679 | Wilkes Barre               |
+|       680 | HornC- BEC-za              |
+|       681 | Skolkovo                   |
+|       682 | Dongmafang                 |
+|       683 | ShalqD+ya                  |
+|       684 | Gununganyartambak Tengah   |
+|       685 | Asykata                    |
+|       686 | Bilajer                    |
+|       687 | TucanC-                    |
+|       688 | Jinta                      |
+|       689 | Huntington Beach           |
+|       690 | Bronx                      |
+|       691 | Jinquan                    |
+|       692 | Fonte Boa                  |
+|       693 | Helsingborg                |
+|       694 | Herrljunga                 |
+|       695 | MirDtah                   |
+|       696 | Stockholm                  |
+|       697 | Sanhe                      |
+|       698 | Ningban                    |
+|       699 | Keyinhe                    |
+|       700 | Saga                       |
+|       701 | Puerto Cabezas             |
+|       702 | Topory                     |
+|       703 | San Pedro Pinula           |
+|       704 | San RamC3n                 |
+|       705 | Amucao                     |
+|       706 | Altanbulag                 |
+|       707 | Kampong Cham               |
+|       708 | Sakon Nakhon               |
+|       709 | Magang                     |
+|       710 | Zolotkovo                  |
+|       711 | Konkwesso                  |
+|       712 | ME-glizh                   |
+|       713 | Olho Marinho               |
+|       714 | Ban Huai Thalaeng          |
+|       715 | Nianpan                    |
+|       716 | Koina                      |
+|       717 | BC!lsamo Oriental          |
+|       718 | Santa LucC-a               |
+|       719 | Las Palmas                 |
+|       720 | Shiban                     |
+|       721 | Bukuru                     |
+|       722 | Charlotte Amalie           |
+|       723 | Annotto Bay                |
+|       724 | EDka Prudnicka           |
+|       725 | TC)nenkou                  |
+|       726 | EckerC6                    |
+|       727 | Lahat                      |
+|       728 | Paripiranga                |
+|       729 | Soukkouma                  |
+|       730 | Sakaraha                   |
+|       731 | Al bAwjah                 |
+|       732 | Bondokodi                  |
+|       733 | Huifeng                    |
+|       734 | Qalbeh-ye KhvDjeh        |
+|       735 | Longzhouwan                |
+|       736 | BrC)tigny-sur-Orge         |
+|       737 | San Juan Bautista          |
+|       738 | Cherkasskoye               |
+|       739 | Anuling                    |
+|       740 | Chengxiang                 |
+|       741 | Waepau                     |
+|       742 | Tuopu                      |
+|       743 | JunC-n                     |
+|       744 | Miguel Calmon              |
+|       745 | Santa Rosa                 |
+|       746 | Gllogjan                   |
+|       747 | BDsawul                   |
+|       748 | Oklahoma City              |
+|       749 | Fort Smith                 |
+|       750 | Nakhon Nayok               |
+|       751 | Huntsville                 |
+|       752 | Kadukaung                  |
+|       753 | Paris La DC)fense          |
+|       754 | Mikuni                     |
+|       755 | Gondifelos                 |
+|       756 | Sarrazola                  |
+|       757 | Bida                       |
+|       758 | Korostyshiv                |
+|       759 | Sukasada                   |
+|       760 | Caldas                     |
+|       761 | Xuedian                    |
+|       793 | Bakalang                   |
+|       794 | Ampahana                   |
+|       795 | WDsosz                    |
+|       796 | AnC!vra                    |
+|       797 | Neglasari                  |
+|       798 | Yuli                       |
+|       799 | Lynn                       |
+|       800 | AntC3nio Enes              |
+|       801 | Fengjiang                  |
+|       802 | Yangmingbu                 |
+|       803 | Kiarajangkung              |
+|       804 | Ostravice                  |
+|       805 | Malabang                   |
+|       806 | Kuzbminskiye Otverzhki     |
+|       807 | Nashville                  |
+|       808 | Spytkowice                 |
+|       809 | Kepuh                      |
+|       810 | Pau                        |
+|       811 | Fukagawa                   |
+|       812 | Novyye CherC+mushki        |
+|       813 | Daqiao                     |
+|       814 | Kutorejo                   |
+|       815 | Cartagena                  |
+|       816 | Tekik Wetan                |
+|       817 | JimaguayC:                 |
+|       818 | Kuidou                     |
+|       819 | At-Bashi                   |
+|       820 | Qingkenpao                 |
+|       821 | Kasungu                    |
+|       822 | Nanping                    |
+|       823 | Gaozhou                    |
+|       824 | Amiens                     |
+|       825 | Kujung                     |
+|       826 | Biloxi                     |
+|       827 | Qianqiao                   |
+|       828 | Szemud                     |
+|       829 | Basel                      |
+|       830 | ItacurubC- del Rosario     |
+|       831 | StarC! HuE%                |
+|       832 | Xiping                     |
+|       833 | Stockholm                  |
+|       834 | Ilbskiy                    |
+|       835 | TvE-rditsa                 |
+|       836 | El Zapote                  |
+|       837 | KE
+chi-shi                 |
+|       838 | San Francisco              |
+|       839 | Sawankhalok                |
+|       840 | Abut                       |
+|       841 | Haramgai                   |
+|       842 | El Obeid                   |
+|       843 | West Palm Beach            |
+|       844 | Lutou                      |
+|       845 | QaffD+n                    |
+|       846 | La Agustina                |
+|       847 | Alkmaar                    |
+|       848 | Roanne                     |
+|       849 | Thanatpin                  |
+|       850 | Karangasem                 |
+|       851 | Huaitu                     |
+|       852 | Calsib                     |
+|       853 | Sumbermanggis              |
+|       854 | Guebwiller                 |
+|       855 | Xinli                      |
+|       856 | Kantyshevo                 |
+|       857 | Cabitan                    |
+|       858 | EgindikC6l                 |
+|       859 | MutatC!                    |
+|       860 | Ciloa                      |
+|       861 | Aulnay-sous-Bois           |
+|       862 | Bouctouche                 |
+|       863 | Novopokrovka               |
+|       864 | Sydney                     |
+|       865 | Dengzishan                 |
+|       866 | Taixi                      |
+|       867 | Xiema                      |
+|       868 | CumanC!                    |
+|       869 | Magadan                    |
+|       870 | Lahar                      |
+|       871 | Xiping                     |
+|       872 | Kedrovoye                  |
+|       873 | Krajan Satu                |
+|       874 | Mloko                      |
+|       875 | Bolbshoye Selo             |
+|       876 | PomiechC3wek               |
+|       881 | Santa BC!rbara             |
+|       882 | Wang Noi                   |
+|       883 | LuleC%                     |
+|       884 | Akkolb                     |
+|       885 | Xiahong                    |
+|       886 | ReykjanesbC&r              |
+|       887 | Zhuxing Chaoxianzu         |
+|       888 | KomornC- Lhotka            |
+|       890 | Gaocang                    |
+|       891 | Bohai                      |
+|       892 | Xinyang                    |
+|       893 | Semanding Barat            |
+|       894 | Gulod                      |
+|       895 | Frederiksberg              |
+|       896 | Junban                     |
+|       897 | Budapest                   |
+|       898 | Roxas                      |
+|       899 | Huangyang                  |
+|       900 | NykC6ping                  |
+|       901 | Ajuy                       |
+|       902 | Primorsko-Akhtarsk         |
+|       903 | Moulay Bouchta             |
+|       904 | Huangshui                  |
+|       905 | PatquC-a                   |
+|       906 | ArlC6v                     |
+|       907 | SillamC$e                  |
+|       908 | Bulbul                     |
+|       909 | Kostryzhivka               |
+|       910 | PerE!tejn                  |
+|       911 | Cibolang                   |
+|       912 | Boshkengash                |
+|       913 | Zengtian                   |
+|       914 | Wuli                       |
+|       915 | Igbo-Ukwu                  |
+|       916 | La Paz                     |
+|       917 | KokkinC3choma              |
+|       918 | Houston                    |
+|       919 | Pirca                      |
+|       920 | Guijalo                    |
+|       921 | Donghoufang                |
+|       922 | NC-kiti                    |
+|       923 | ParadyE<                   |
+|       924 | Gujun                      |
+|       925 | Beiban                     |
+|       926 | Stockholm                  |
+|       927 | Gunung                     |
+|       928 | Barabedang                 |
+|       929 | Zvole                      |
+|       930 | KonDrak                   |
+|       931 | Oslo                       |
+|       932 | KamennC) E=ehrovice        |
+|       933 | Strel'na                   |
+|       934 | Nikolayevsk                |
+|       935 | Calzada Larga              |
+|       936 | Giyon                      |
+|       937 | Huddinge                   |
+|       938 | Oborniki ElDskie         |
+|       939 | Mertert                    |
+|       940 | Kubachi                    |
+|       941 | Porto Alto                 |
+|       942 | Filabusi                   |
+|       943 | Piippola                   |
+|       944 | FayaouC)                   |
+|       945 | Emmeloord                  |
+|       946 | Llano de Piedra            |
+|       947 | Rizhao                     |
+|       948 | InDija                    |
+|       949 | EirunepC)                  |
+|       950 | Nong Khai                  |
+|       951 | Dashi                      |
+|       952 | Seremban                   |
+|       953 | Al ManDqil                |
+|       954 | Maogou                     |
+|       955 | Tengah                     |
+|       956 | Woha                       |
+|       957 | Achiaman                   |
+|       958 | Bordeaux                   |
+|       959 | Yangzhuang                 |
+|       960 | Ajaccio                    |
+|       961 | Shanhaiguan                |
+|       962 | Sv. Anton                  |
+|       963 | Barda                      |
+|       964 | Heka                       |
+|       965 | Yeosu                      |
+|       966 | Lhuentse                   |
+|       967 | Wenfu                      |
+|       968 | Qiganjidie                 |
+|       969 | Tebingtinggi               |
+|       970 | Lagos                      |
+|       971 | Kan                        |
+|       972 | Cavinti                    |
+|       973 | Liulang                    |
+|       974 | Rangmanten                 |
+|       975 | Novaya Chigla              |
+|       976 | Soroti                     |
+|       977 | Karangbaru                 |
+|       978 | Cikuning                   |
+|       979 | Longbo                     |
+|       980 | Yancheng                   |
+|       981 | Chigasaki                  |
+|       982 | AbnE+b                     |
+|       983 | Tianyi                     |
+|       984 | Niyang                     |
+|       985 | GrC%bo                     |
+|       986 | Baishui                    |
+|       987 | Ciudad Vieja               |
+|       988 | Zhangjiapan                |
+|       989 | Huatajata                  |
+|       990 | Pyinmana                   |
+|       991 | Gurbuki                    |
+|       992 | Palma Gil                  |
+|       993 | Langjun                    |
+|       994 | Linton                     |
+|       995 | Biryukove                  |
+|       996 | Pante Raja                 |
++-----------+----------------------------+
+685 rows in set (0.00 sec)
+
+mysql> select * from Branch;mysql> [5Pdescribe Branch;mysql> ;[Kshow tablesmysql> [2Puse test;[6@able test;mysql> [53@insert into Branch (branch_id, branch_city) values (1000, 'PiteC%');mysql> use table test;[K[6Pest;mysql> show tablesmysql> ;[Kdescribe Branch;mysql> [5@select * from Branch;mysql> [Kx select * from Branch;mysql> [5Pdescribe Branch;mysql> [5@select * from Branch;mysql> [5Pdescribe Branch;mysql> [5@select * from Branch;mysql> [Kdrop table Branch;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create tablemysql> drop table Branch;mysql> [3@select * from Branch;mysql> [5Pdescribe Branch;mysql> ;[Kshow tablesmysql> [2Puse test;[6@able test;mysql> [53@insert into Branch (branch_id, branch_city) values (1000, 'PiteC%');[3@999, 'Xambabazar');[1P8, 'Janakkala');7, 'BaraC'ais');[1@6, 'Pante Raja');[1P5, 'Biryukove');[3P4, 'Linton');[1@3, 'Langjun');[2@2, 'Palma Gil');[2P1, 'Gurbuki');[1@0, 'Pyinmana');[1@89, 'Huatajata');[2@8, 'Zhangjiapan');[1@7, 'Ciudad Vieja');[5P6, 'Baishui');[1P5, 'GrC%bo');4, 'Niyang');3, 'Tianyi');2, 'AbnE+b');[3@1, 'Chigasaki');[1P0, 'Yancheng');[2P79, 'Longbo');[2@8, 'Cikuning');[2@7, 'Karangbaru');[4P6, 'Soroti');[7@5, 'Novaya Chigla');[3P4, 'Rangmanten');[3P3, 'Liulang');2, 'Cavinti');[4P1, 'Kan');[2@0, 'Lagos');[7@69, 'Tebingtinggi');[2P8, 'Qiganjidie');[5P7, 'Wenfu');[3@6, 'Lhuentse');[3P5, 'Yeosu');[1P4, 'Heka');[1@3, 'Barda');[4@2, 'Sv. Anton');[2@1, 'Shanhaiguan');[4P0, 'Ajaccio');[3@59, 'Yangzhuang');[2P8, 'Bordeaux');7, 'Achiaman');[4P6, 'Woha');[2@5, 'Tengah');4, 'Maogou');[6@3, 'Al ManD^Aqil');[4P2, 'Seremban');[3P1, 'Dashi');[4@0, 'Nong Khai');49, 'EirunepC)');[1P8, 'InD^Qija');[2P7, 'Rizhao');[9@6, 'Llano de Piedra');[6P5, 'Emmeloord');[1P4, 'FayaouC)');3, 'Piippola');2, 'Filabusi');[2@1, 'Porto Alto');[3P0, 'Kubachi');39, 'Mertert');[13@8, 'Oborniki E^ZlD^Eskie');[12P7, 'Huddinge');[3P6, 'Giyon');[8@5, 'Calzada Larga');[2P4, 'Nikolayevsk');[2P3, 'Strel''na');[10@2, 'KamennC) E=ehrovice');[15P1, 'Oslo');[5@0, 'KonD^Arak');[4P29, 'Zvole');[5@8, 'Barabedang');[4P7, 'Gunung');[3@6, 'Stockholm');[3P5, 'Beiban');[1P4, 'Gujun');[3@3, 'ParadyE<');[1P2, 'NC-kiti');[4@1, 'Donghoufang');[4P0, 'Guijalo');[2P19, 'Pirca');[2@8, 'Houston');[6@7, 'KokkinC3choma');[7P6, 'La Paz');[3@5, 'Igbo-Ukwu');[5P4, 'Wuli');[4@3, 'Zengtian');[3@2, 'Boshkengash');[3P1, 'Cibolang');[1@0, 'PerE!tejn');[3@09, 'Kostryzhivka');[6P8, 'Bulbul');[3@7, 'SillamC$e');[3P6, 'ArlC6v');[2@5, 'PatquC-a');[1@4, 'Huangshui');[5@3, 'Moulay Bouchta');[4@2, 'Primorsko-Akhtarsk');[14P1, 'Ajuy');[5@0, 'NykC6ping');899, 'Huangyang');[4P8, 'Roxas');[3@7, 'Budapest');[2P6, 'Junban');[7@5, 'Frederiksberg');[8P4, 'Gulod');[10@3, 'Semanding Barat');[8P2, 'Xinyang');[2P1, 'Bohai');[2@0, 'Gaocang');[1P89, 'Ca:'u Ga;[9@8, 'KomornC- Lhotka');[3@7, 'Zhuxing Chaoxianzu');[5P6, 'ReykjanesbC&r');[6P5, 'Xiahong');[1P4, 'Akkolb');3, 'LuleC%');[2@2, 'Wang Noi');[6@1, 'Santa BC!rbara');79, 'SC insert into Branch (braanch_id, branch_city) values (880, 'Outeiro');[Aity) values (87[7P8, 'Paulpietersburg');
+[K[Amysql> insert into Branch (branch_id, branch_city) values (878, 'Paulpietersburg');[11P7, 'PrzemyE80, 'Outeiro');79, 'SC#o JosC) do Rio Pardo');;[Aysql> insert into Branch (branch_id, branch_city) values (87[7P8, 'Paulpietersburg');
+[K[Amysql> insert into Branch (branch_id, branch_city) values (878, 'Paulpietersburg');[11P7, 'PrzemyE6, 'PomiechC3wek');[2@5, 'Bolbshoye Selo');[9P4, 'Mloko');[6@3, 'Krajan Satu');[2P2, 'Kedrovoye');[3P1, 'Xiping');[1P0, 'Lahar');[2@69, 'Magadan');8, 'CumanC!');[2P7, 'Xiema');6, 'Taixi');[5@5, 'Dengzishan');[4P4, 'Sydney');[6@3, 'Novopokrovka');[2P2, 'Bouctouche');[6@1, 'Aulnay-sous-Bois');[11P0, 'Ciloa');[2@59, 'MutatC!');[3@8, 'EgindikC6l');[3P7, 'Cabitan');[3@6, 'Kantyshevo');[5P5, 'Xinli');               
+Display all 771 possibilities? (y or n)
+mysql> insert into Branch (branch_id, branch_city) values 
+    -> 
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table Branch()b)r)a)n)c)h)_)i)d),) )b)r)a)n)c)h)_)c)i)t)y)[1@ [1@i[1@n[1@t, [1Pbranch_city )v)a)r)c)h)a)r)()))[1@5[1@0));
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> drop table 
+Display all 771 possibilities? (y or n)
+mysql> drop table 
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> show tables
+    -> d ;
++----------------+
+| Tables_in_test |
++----------------+
+| Branch         |
+| Customer       |
+| Employee       |
+| Service        |
++----------------+
+4 rows in set (0.00 sec)
+
+mysql> drop table Customer;                    describe Customer;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| cust_id       | int(11)     | YES  |     | NULL    |       |
+| cust_name     | char(50)    | YES  |     | NULL    |       |
+| customer_city | char(50)    | YES  |     | NULL    |       |
+| cust_phone    | int(11)     | YES  |     | NULL    |       |
+| branch_id     | varchar(25) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table cust    Customer ALt TER       alter_co olumnd [1P[1@ column   umn cust_name varchar()1)0)0));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchar(100)' at line 1
+mysql> alter table Customer alter column cust_name varchar(100);[1@\[1P[1P[1P[1P[1P[1P[1@m[1@o[1@d[1@i[1@f[1@y
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> exit
+Bye
+]0;arjun@arjun-Veertu: ~arjun@arjun-Veertu:~$ exit
+logout
+Connection to 192.168.64.3 closed.
+bash-3.2$ exit
+exit
+
+Script done on Wed Mar 15 19:45:01 2017
