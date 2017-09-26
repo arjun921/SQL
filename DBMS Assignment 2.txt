@@ -1,0 +1,231 @@
+---------------------------
+|| Mr. Anirban Dey       ||
+|| University of Calcutta||
+---------------------------
+
+
+Table Creation in DBMS(Oracle 10g)
+======================================
+Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id)
+Branch (branch_id, branch_city)
+Customer(cust_id, cust_name, customer_city, cust_phone, branch_id)
+Service(cust_id,emp_id)
+
+========================QUERIES FOR TABLE CREATION===================================
+CREATE TABLE
+Branch
+(
+branch_city VARCHAR2(10),
+branch_id VARCHAR2(4),
+PRIMARY KEY (branch_id)
+);
+
+
+CREATE TABLE
+Employee
+(
+emp_id VARCHAR2(10),
+emp_name VARCHAR2(25),
+emp_phone NUMBER(10),
+emp_salary NUMBER(6),
+branch_id VARCHAR2(4),
+PRIMARY KEY (emp_id),
+FOREIGN KEY (branch_id) REFERENCES Branch(branch_id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE
+Customer
+(
+cust_id VARCHAR2(5), 
+cust_name VARCHAR2(5),
+customer_city VARCHAR2(5),
+cust_phone NUMBER(10), 
+branch_id VARCHAR2(4),
+PRIMARY KEY (cust_id),
+FOREIGN KEY (branch_id) REFERENCES Branch(branch_id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE
+Service
+(
+cust_id VARCHAR2(5),
+emp_id VARCHAR2(10),
+FOREIGN KEY (cust_id) REFERENCES Customer(cust_id) ON DELETE CASCADE,
+FOREIGN KEY (emp_id) REFERENCES Employee(emp_id) ON DELETE CASCADE
+);
+
+
+
+Express the following queries in SQL
+===================================
+
+a) Give a salary hike of 10% for all the employees serving the customer with
+customer id C1001.
+QUERY:
+
+UPDATE Employee
+SET emp_salary = (emp_salary*1.10) 
+WHERE 
+emp_id IN (Select emp_id from Service 
+where cust_id='C1001');
+
+b) Find the name and phone number of all the employees who work in Cochin
+QUERY:
+
+SELECT emp_name as name, emp_phone as phone_number 
+FROM Employee
+WHERE branch_id IN (select branch_id from Branch
+WHERE branch_city='Cochin'); 
+
+
+c) Find the name and phone number of all the customers who live in Cochin
+and are customers of a branch in Cochin.
+QUERY:
+
+
+SELECT cust_name as name, cust_phone as phone_number 
+FROM Customer
+WHERE customer_city='Cochin' and 
+cust_id 
+	IN (select cust_id from Service 
+	where emp_id 
+		IN (select emp_id from Employee 
+		where branch_id 
+			IN (select branch_id from Branch 
+			where Branch_city='Cochin'
+			)
+		)
+	);
+
+
+SQL INNER JOIN:
+===============
+The INNER JOIN creates a new result table by combining column values of two 
+tables (table1 and table2) based upon the join-predicate. The query compares 
+each row of table1 with each row of table2 to find all pairs of rows which 
+satisfy the join-predicate. When the join-predicate is satisfied, column values 
+for each matched pair of rows of A and B are combined into a result row.
+
+An inner join includes only those tuples with matching attributes and the rest 
+are discarded in the resulting relation.
+There are three types of inner joins:
+1.Theta Join, 
+2.Equijoin, and 
+3.Natural Join.
+
+Theta (?) Join :
+Theta join combines tuples from different relations provided they satisfy the theta 
+condition. The join condition is denoted by the symbol '?'.
+R1 and R2 are relations having attributes (A1, A2, .., An) and (B1, B2,.. ,Bn) such 
+that the attributes don’t have anything in common, that is R1 n R2 = F.
+
+Equijoin:
+When Theta join uses only equality comparison operator, it is said to be equijoin. 
+The above example corresponds to equijoin.
+
+Natural Join (?) :
+Natural join does not use any comparison operator. It does not concatenate the way a 
+Cartesian product does. We can perform a Natural Join only if there is at least one 
+common attribute that exists between two relations. In addition, the attributes must 
+have the same name and domain.
+Natural join acts on those matching attributes where the values of attributes in both 
+the relations are same.
+
+Example:~
+
+Syntax:
+SELECT table1.column1, table2.column2...
+FROM table1
+INNER JOIN table2
+ON table1.common_field = table2.common_field;
+
+Example:
+
+SELECT E.emp_id,E.emp_name,C.cust_id,C.cust_name FROM 
+Employee as E 
+INNER JOIN 
+Customer as C
+ON Employee.Branch_id=Customer.Branch_id;
+
+
+Outer Joins:
+There are three kinds of outer joins - 
+1.left outer join, 
+2.right outer join and 
+3.full outer join.
+
+left outer join:
+All the tuples from the Left relation, R, are included in the resulting relation. 
+If there are tuples in R without any matching tuple in the Right relation S, then 
+the S-attributes of the resulting relation are made NULL.
+
+Right Outer Join:
+All the tuples from the Right relation, S, are included in the resulting relation. 
+If there are tuples in S without any matching tuple in R, then the R-attributes of 
+resulting relation are made NULL.
+
+Full Outer Join:
+All the tuples from both participating relations are included in the resulting 
+relation. If there are no matching tuples for both relations, their respective 
+unmatched attributes are made NULL.
+
+
+
+3. Attempt the following using PL SQL :
+a) Write a stored function to find the number of employees serving any given customer.
+Soln.:
+
+
+FUNCTION find_employee(cust_ID VARCHAR2(10))   
+DECLEAR
+	c_id customers.id%type; 
+   	c_name customerS.No.ame%type; 
+   	c_addr customers.address%type; 
+   	CURSOR c_customers is 
+     	       SELECT emp_id FROM employee;
+BEGIN 
+   SELECT emp_id from Service
+	where cust_id = cust_ID;
+	IF sql%notfound THEN 
+      		dbms_output.put_line('no Employee selected'); 
+   	ELSIF sql%found THEN 
+      		total_rows := sql%rowcount;
+		dbms_output.put_line( total_rows || ' customers selected '); 
+		OPEN c_Emp; 
+   		LOOP 
+   			FETCH c_Emp into c_id; 
+      			EXIT WHEN c_customers%notfound; 
+      			dbms_output.put_line(c_id); 
+   		END LOOP; 
+   		CLOSE c_customers; 
+   	END IF; 
+END;
+
+b) Write a stored procedure to give a salary hike of 10% for all the employees serving 
+any given customer.
+Soln.:
+
+DECLARE  
+   total_rows number(2); 
+BEGIN 
+   UPDATE employee 
+   SET salary = salary * 1.10; 
+   IF sql%notfound THEN 
+      dbms_output.put_line('no customers selected'); 
+   ELSIF sql%found THEN 
+      total_rows := sql%rowcount;
+      dbms_output.put_line( total_rows || ' customers selected '); 
+   END IF;  
+END;
+
+
+
+
+4.Find and store the emp_id,emp_nameand emp_phoneof the employees serving
+ each customer in a new table with schema
+ (cust_id,cust_name,emp_id,emp_name,emp_phone)
+ Illustrate the use of cursor and parameterized cursor in the PL SQL routine.
+
+

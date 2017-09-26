@@ -3,7 +3,7 @@ Schema Building
 create table Branch (
 	branch_id VARCHAR(50),
 	branch_city VARCHAR(50),
-    PRIMARY KEY (branch_id)
+	PRIMARY KEY (branch_id)
 );
 insert into Branch (branch_id, branch_city) values ('B77', 'Visaginas');
 insert into Branch (branch_id, branch_city) values ('B48', 'Zongluzui');
@@ -16,8 +16,8 @@ create table Customer (
 	customer_city VARCHAR(50),
 	cust_phone VARCHAR(50),
 	branch_id VARCHAR(50),
-    PRIMARY KEY (cust_id),
-    FOREIGN KEY (branch_id) references Branch(branch_id)
+	PRIMARY KEY (cust_id),
+	FOREIGN KEY (branch_id) references Branch(branch_id)
 );
 insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C5', 'Gary Ellis', 'Visaginas', '62-(854)550-6020', 'B77');
 insert into Customer (cust_id, cust_name, customer_city, cust_phone, branch_id) values ('C9', 'Theresa Fuller', 'Visaginas', '39-(237)791-7365', 'B77');
@@ -56,8 +56,8 @@ create table Employee (
 	emp_phone VARCHAR(50),
 	emp_salary DECIMAL(8,2),
 	branch_id VARCHAR(50),
-    PRIMARY KEY (emp_id),
-    FOREIGN KEY (branch_id) references Branch(branch_id)
+	PRIMARY KEY (emp_id),
+	FOREIGN KEY (branch_id) references Branch(branch_id)
 );
 insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E75', 'Jack Ramos', '998-(309)261-0596', 88354.65, 'B77');
 insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values ('E22', 'Eugene Alvarez', '86-(652)454-8846', 309461.12, 'B77');
@@ -103,8 +103,8 @@ insert into Employee (emp_id, emp_name, emp_phone, emp_salary, branch_id) values
 create table Service (
 	cust_id VARCHAR(50),
 	emp_id VARCHAR(50),
-    FOREIGN KEY (cust_id) references Customer(cust_id),
-    FOREIGN KEY (emp_id) references Employee(emp_id)
+	FOREIGN KEY (cust_id) references Customer(cust_id),
+	FOREIGN KEY (emp_id) references Employee(emp_id)
 );
 
 insert into Service (cust_id, emp_id) values ('C1001', 'E30');
@@ -142,7 +142,6 @@ Output Before Increment:
 +--------+----------------+-------------------+------------+-----------+
 
 update Employee set emp_salary=emp_salary+(emp_salary*0.1) where emp_id in (select emp_id from Service where cust_id='C1001');
-
 select * from Employee where emp_id in (select emp_id from Service where cust_id='C1001');
 Output:
 +--------+----------------+-------------------+------------+-----------+
@@ -154,7 +153,7 @@ Output:
 | E59    | Janet Riley    | 62-(237)102-2731  |  112264.41 | B48       |
 | E8     | Phillip Burns  | 62-(154)696-3245  |  376126.30 | B48       |
 +--------+----------------+-------------------+------------+-----------+
-================================================================================
+
 
 b)
 select emp_name, emp_phone from Employee where branch_id=(select branch_id from Branch where branch_city='Cochin');
@@ -172,7 +171,8 @@ select emp_name, emp_phone from Employee where branch_id=(select branch_id from 
 | Paul Ford          | 963-(476)657-7681 |
 | Juan Hart          | 86-(495)823-9694  |
 +--------------------+-------------------+
-================================================================================
+
+
 c)
 select cust_name as Name, cust_phone as Contact from (select * from (select * from Customer left join Branch using(branch_id)) as t1 where branch_city=customer_city order by customer_city) 
 as t2 where customer_city='Cochin';
@@ -187,10 +187,112 @@ Output:
 | Brandon Harper  | 62-(997)846-0480  |
 | Amanda Crawford | 62-(669)140-0363  |
 +-----------------+-------------------+
+
 Q2.
+
 Inner Join:
 select Customer.branch_id,cust_id,cust_name,emp_id,emp_name from Customer inner join Employee on Customer.branch_id=Employee.branch_id order by branch_id;
 Outer Join:
-select * from Customer left join Employee on Customer.branch_id=Employee.branch_id;
-select * from Customer right join Employee on Customer.branch_id=Employee.branch_id;
+select * from Customer left join Employee on Customer.branch_id=Employee.branch_id UNION select * from Customer right join Employee on Customer.branch_id=Employee.branch_id;
+
 Q3. 
+(a) 
+
+FUNCTION find_employee(cust_ID VARCHAR2(10))
+DECLARE
+c_id customers.id%type;
+c_name customerS.No.ame%type;
+c_addr customers.address%type;
+CURSOR c_customers is
+SELECT emp_id FROM employee;
+BEGIN
+SELECT emp_id from Service
+where cust_id = cust_ID;
+IF sql%notfound THEN
+dbms_output.put_line('no Employee selected');
+ELSIF sql%found THEN
+total_rows := sql%rowcount;
+dbms_output.put_line( total_rows || ' customers selected ');
+OPEN c_Emp;
+LOOP
+FETCH c_Emp into c_id;
+EXIT WHEN c_customers%notfound;
+dbms_output.put_line(c_id);
+END LOOP;
+CLOSE c_customers;
+END IF;
+END;
+
+(b)  
+
+Create procedure hike()
+Begin
+update Employee set emp_salary=emp_salary+(emp_salary*0.1) where emp_id in (select emp_id from Service where cust_id='C1001');
+END //
+
+Call hike()//
+
+Q4.
+
+DECLARE
+c_id customer.cust_id%type;
+c_name customer.cust_id%type;
+e_id employee.emp_id%type;
+e_name employee.emp_name%type;
+e_phno employee.emp_phone%type;
+CURSOR t_CUR is
+SELECT cust_id,cust_name,emp_id,emp_name,emp_phone
+FROM customers NATURAL JOIN employee;
+BEGIN
+OPEN t_CUR;
+LOOP
+FETCH t_CUR into c_id,c_name,e_id,e_name,e_phno ;
+EXIT WHEN t_CUR%notfound;
+dbms_output.put_line(c_id || ' ' || c_name || ' ' || c_addr);
+END LOOP;
+CLOSE t_CUR;
+END;
+
+Q5.
+
+(a)
+CREATE OR REPLACE TRIGGER t
+BEFORE
+INSERT OR UPDATE OR DELETE ON employee
+BEGIN
+CASE
+WHEN INSERTING THEN
+INSERT INTO CUST_REC values('CUSTOMER','INSERT',SYSDATETIME());
+DBMS_OUTPUT.PUT_LINE('EMPLOYEE RELATION ALTERED');
+WHEN UPDATING('salary') THEN
+INSERT INTO CUST_REC values('CUSTOMER','UPDATE',SYSDATETIME());
+DBMS_OUTPUT.PUT_LINE('EMPLOYEE RELATION ALTERED');
+WHEN DELETING('department_id') THEN
+INSERT INTO CUST_REC values('CUSTOMER','DELETE',SYSDATETIME());
+DBMS_OUTPUT.PUT_LINE('EMPLOYEE RELATION ALTERED');
+END CASE;
+END;
+
+
+(b)
+
+CREATE OR REPLACE TRIGGER REC_INFO
+BEFORE UPDATE OF cust_phone ON customer
+FOR EACH ROW
+BEGIN
+dbms_output.put_line('TRIGGER IS FIRED CUSTOMER PHONE WILL BE
+UPDATED.');
+END;
+
+
+(c)
+
+CREATE OR REPLACE TRIGGER REC_INFO
+AFTER INSERT OF emp_salary ON employee
+FOR EACH ROW
+WHEN (NEW.emp_salary > 5000)
+BEGIN
+dbms_output.put_line('TRIGGER IS FIRED CUSTOMER PHONE WILL BE
+UPDATED.');
+rollback;
+END;  
